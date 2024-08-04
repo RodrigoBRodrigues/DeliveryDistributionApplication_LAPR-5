@@ -1,0 +1,207 @@
+ID: ELEC2201
+TITLE: Electronics Questionnaire
+WELCOME MESSAGE: Hello, This Questionnaire aims to view your satisfaction towards the eletronics you purchased. It takes approximately 10 minutes. Thank you very much for your time and support.
+
+LIST OF SECTIONS:
+
+SECTION ID: 1
+SECTION TITLE: About You
+SECTION DESCRIPTION: Section About Your Personal Information
+OBLIGATORINESS: MANDATORY
+
+CONTENT:
+
+QUESTION ID: 1
+Q: What is your gender?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Male|2- Female|3- Other
+
+QUESTION ID: 2
+Q: What's your age?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- 18-24|2- 25-34|3- 35-44|4- 44-54|5- 55-64|6- 65-74|7- 75+
+
+QUESTION ID: 3
+Q: What's your age
+OBLIGATORINESS: OPTIONAL
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- North|2- Centre|3- South|4- Madeira|5- Azores
+
+SECTION ID: 2
+SECTION TITLE: Categories of electronics
+SECTION DESCRIPTION: Section About Your Favourite Electronics
+OBLIGATORINESS: MANDATORY
+
+CONTENT:
+
+QUESTION ID: 4
+Q: What categories do you usually buy on our platform?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Mobile phone|2- Laptop|3- Television
+
+SECTION ID: 3
+SECTION TITLE: Mobile Phone
+SECTION DESCRIPTION: Section About Your Mobile Phone preferences
+OBLIGATORINESS: CONDITION_DEPENDENT (If Mobile Phone is selected on QUESTION 4)
+
+CONTENT:
+
+QUESTION ID: 5
+Q: What is your favourite brand?
+OBLIGATORINESS: MANDATORY
+TYPE: FREE_TEXT
+
+QUESTION ID: 6
+Q: How often do you use your phone during the week?
+OBLIGATORINESS: MANDATORY
+TYPE: FREE_TEXT
+EXTRA INFO: (Type it in hours)
+
+QUESTION ID: 7
+Q: Which factors do you consider when buying a mobile phone
+OBLIGATORINESS: CONDITION_DEPENDENT (if not Never/0h is said QUESTION 7 becomes mandatory)
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Price|2- Battery Life|3- Brand Reputation|4- Quality|5- Colour
+
+SECTION ID: 4
+SECTION TITLE: Laptop
+SECTION DESCRIPTION: Section About Your Laptop preferences
+OBLIGATORINESS: CONDITION_DEPENDENT (If Laptop is selected on QUESTION 4)
+
+CONTENT:
+
+QUESTION ID: 8
+Q: What is your favourite brand?
+OBLIGATORINESS: MANDATORY
+TYPE: FREE_TEXT
+
+QUESTION ID: 9
+Q: How often do you use your laptop during the week?
+OBLIGATORINESS: MANDATORY
+TYPE: FREE_TEXT
+EXTRA INFO: (Type it in hours)
+
+QUESTION ID: 10
+Q: Which factors do you consider when buying a laptop
+OBLIGATORINESS: CONDITION_DEPENDENT (if not Never/0h is said QUESTION 7 becomes mandatory)
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Price|2- Battery Life|3- Brand Reputation|4- Quality|5- Colour
+
+SECTION ID: 5
+SECTION TITLE: Television
+SECTION DESCRIPTION: Section About Your Television preferences
+OBLIGATORINESS: CONDITION_DEPENDENT (If Television is selected on QUESTION 4)
+
+CONTENT:
+
+QUESTION ID: 11
+Q: What is your favourite brand?
+OBLIGATORINESS: MANDATORY
+TYPE: FREE_TEXT
+
+QUESTION ID: 12
+Q: How often do you use your television during the week?
+OBLIGATORINESS: MANDATORY
+TYPE: FREE_TEXT
+EXTRA INFO: (Type it in hours)
+
+QUESTION ID: 13
+Q: Which factors do you consider when buying a television
+OBLIGATORINESS: CONDITION_DEPENDENT (if not Never/0h is said QUESTION 7 becomes mandatory)
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Price|2- Energy Consumption|3- Brand Reputation|4- Image Quality|5- Colour
+
+SECTION ID: 6
+SECTION TITLE: Usage of new products
+SECTION DESCRIPTION: Section About Your availability to test/use new products
+OBLIGATORINESS: CONDITION_DEPENDENT (For all the answers to QUESTION 4)
+
+CONTENT:
+
+QUESTION ID: 14
+Q: Are you willing to try new products of this category?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Yes|2- No
+
+QUESTION ID: 15
+Q: How much are you willing to spend on this category?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- 0-199EUR|2- 200-399EUR|3- 400-599EUR|4- 600-799EUR|5- 800-999EUR|6- 1000-1199EUR|7- 1200-1399EUR|8- 1400-2000EUR
+
+SECTION ID: 7
+SECTION TITLE: Do you agree with the following statements?
+SECTION DESCRIPTION: Section About your level of disagreement on these statements
+OBLIGATORINESS: MANDATORY
+
+CONTENT:
+
+QUESTION ID: 16
+Q: Cheapest products are as good as expensive
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 1- Strongly agree|2- Agree|3- Neutral|4- Disagree|5- Strongly disagree
+
+QUESTION ID: 17
+Q: I spend too much money on electronics
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 1- Strongly agree|2- Agree|3- Neutral|4- Disagree|5- Strongly disagree
+
+QUESTION ID: 18
+Q: I find the range of products and brands available confusing
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 1- Strongly agree|2- Agree|3- Neutral|4- Disagree|5- Strongly disagree
+
+QUESTION ID: 19
+Q: The only guaranty of quality is a recognisable brand
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 1- Strongly agree|2- Agree|3- Neutral|4- Disagree|5- Strongly disagree
+
+QUESTION ID: 20
+Q: I always buy the same brands
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 1- Strongly agree|2- Agree|3- Neutral|4- Disagree|5- Strongly disagree
+
+QUESTION ID: 21
+Q: I love trying new products
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 1- Strongly agree|2- Agree|3- Neutral|4- Disagree|5- Strongly disagree
+
+SECTION ID: 8
+SECTION TITLE: More about you
+SECTION DESCRIPTION: More personal sectional about you
+OBLIGATORINESS: OPTIONAL
+
+CONTENT:
+
+QUESTION ID: 22
+Q: What's your working status?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Full-Time|2- Part-Time|3- Unemployed|4- Student|5- Retired
+
+QUESTION ID: 23
+Q: What's your martial status?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Single|2- Married|3- Divorced|4- Widow or Widower
+
+QUESTION ID: 24
+Q: Do you have children?
+OBLIGATORINESS: MANDATORY
+TYPE: MULTIPLE_CHOICE
+EXTRA INFO: 1- Yes|2- No
+
+QUESTION ID: 25
+Q: How many children have you got?
+OBLIGATORINESS: CONDITION_DEPENDENT (If yes was selected on QUESTION 22)
+TYPE: FREE_TEXT

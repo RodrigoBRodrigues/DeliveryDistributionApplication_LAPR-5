@@ -1,0 +1,75 @@
+@startuml
+autonumber
+actor "WarehouseEmployee" as SC
+
+participant  "WarehouseUI <presentation>" as SYS
+participant ":WarehouseController <application>" as CTRL
+participant ":JsonParser" as CSB
+participant ":Warehouse<Domain>" as CUS
+participant ":PersistenceContext<persistence>" as PC
+participant ":RepositoryFactory<factory>" as RF
+participant ":WarehouseRepository" as CR
+
+
+
+
+activate SC
+activate SYS
+
+SC-> SYS: Set up Warehouse Plant Option
+
+SYS-> SC: asks the name of the file
+
+SC-> SYS: introduces file name
+
+SYS-> CTRL : buildWarehousePlant(filename)
+
+activate CTRL
+CTRL-> CSB **: create
+
+activate CSB
+CSB-> CSB: readJson(fileName)
+
+CSB -> CUS : fromJson(fileName)
+activate CUS
+
+CUS -> CSB: warehouse
+deactivate CUS
+
+CSB -> CTRL: warehouse
+
+deactivate CSB
+CTRL->CUS: buildShelves()
+activate CUS
+deactivate CUS
+CTRL->CUS: setJsonPath()
+activate CUS
+deactivate CUS
+CUS -> CTRL: warehouse
+deactivate CUS
+
+
+CTRL-> PC**: repositories()
+activate PC
+PC-> RF**: create
+PC-> CTRL: factory
+deactivate PC
+
+CTRL-> RF: warehouses()
+activate RF
+RF->CR**: create
+
+RF->CTRL: warehouseRepository
+deactivate RF
+CTRL->CR: save(warehouse)
+
+deactivate PC
+activate CR
+
+CTRL -> SYS: confirmation is show to the user
+deactivate CR
+deactivate CTRL
+
+SYS-> SC: presents the user with the plant
+deactivate SYS
+@enduml

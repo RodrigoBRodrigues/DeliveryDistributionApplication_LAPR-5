@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="620px" preserveAspectRatio="none" style="width:1812px;height:620px;" version="1.1" viewBox="0 0 1812 620" width="1812px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1fqgpyd9g84nd" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="425.5703" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="42" y="97.6094" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="151.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="285" y="119.9609" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="212.1094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="285" y="302.0703" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="91.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="668" y="150.3125" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="91.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="668" y="332.4219" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="668" y="453.8281" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1054" y="180.6641" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1244.5" y="362.7734" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="47" x2="47" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="290" x2="290" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="673" x2="673" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="883" x2="883" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1059" x2="1059" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1249" x2="1249" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1449" x2="1449" y1="87.6094" y2="532.1797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1684" x2="1684" y1="87.6094" y2="532.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="8" y="84.5332">Sales Clerk</text>
+        <ellipse cx="47" cy="13" fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M47,21 L47,48 M34,29 L60,29 M47,48 L34,63 M47,48 L60,63 " fill="none" filter="url(#f1fqgpyd9g84nd)" style="stroke: #A80036; stroke-width: 2.0;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="8" y="545.7129">Sales Clerk</text>
+        <ellipse cx="47" cy="558.7891" fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M47,566.7891 L47,593.7891 M34,574.7891 L60,574.7891 M47,593.7891 L34,608.7891 M47,593.7891 L60,608.7891 " fill="none" filter="url(#f1fqgpyd9g84nd)" style="stroke: #A80036; stroke-width: 2.0;" />
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="206" x="185" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="192" x="192" y="72.5332">CheckCustomerOpenOrdersUI</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="206" x="185" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="192" x="192" y="552.7129">CheckCustomerOpenOrdersUI</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="256" x="543" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="242" x="550" y="72.5332">CheckCustomerOpenOrdersController</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="256" x="543" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="242" x="550" y="552.7129">CheckCustomerOpenOrdersController</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="136" x="813" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="122" x="820" y="72.5332">PersistenceContext</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="136" x="813" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="122" x="820" y="552.7129">PersistenceContext</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="188" x="963" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="174" x="970" y="72.5332">cRepo:CustomerRepository</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="188" x="963" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="174" x="970" y="552.7129">cRepo:CustomerRepository</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="165" x="1165" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="151" x="1172" y="72.5332">oRepo:OrderRepository</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="165" x="1165" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="151" x="1172" y="552.7129">oRepo:OrderRepository</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="206" x="1344" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="192" x="1351" y="72.5332">lCustomer:Iterable&lt;Customer&gt;</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="206" x="1344" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="192" x="1351" y="552.7129">lCustomer:Iterable&lt;Customer&gt;</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="237" x="1564" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="223" x="1571" y="72.5332">lProdOrder:Iterable&lt;ProductOrder&gt;</text>
+        <rect fill="#FEFECE" filter="url(#f1fqgpyd9g84nd)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="237" x="1564" y="531.1797" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="223" x="1571" y="552.7129">lProdOrder:Iterable&lt;ProductOrder&gt;</text>
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="425.5703" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="42" y="97.6094" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="151.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="285" y="119.9609" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="212.1094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="285" y="302.0703" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="91.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="668" y="150.3125" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="91.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="668" y="332.4219" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="668" y="453.8281" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1054" y="180.6641" />
+        <rect fill="#FFFFFF" filter="url(#f1fqgpyd9g84nd)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1244.5" y="362.7734" />
+        <polygon fill="#A80036" points="273,115.9609,283,119.9609,273,123.9609,277,119.9609" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="52" x2="279" y1="119.9609" y2="119.9609" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="59" y="115.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="70" y="115.1045">initiates process</text>
+        <polygon fill="#A80036" points="656,146.3125,666,150.3125,656,154.3125,660,150.3125" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="295" x2="662" y1="150.3125" y2="150.3125" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="302" y="145.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="185" x="313" y="145.4561">lCustomer = getListCustomers()</text>
+        <polygon fill="#A80036" points="1042,176.6641,1052,180.6641,1042,184.6641,1046,180.6641" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="678" x2="1048" y1="180.6641" y2="180.6641" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="685" y="175.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="696" y="175.8076">findAllActive()</text>
+        <polygon fill="#A80036" points="689,207.0156,679,211.0156,689,215.0156,685,211.0156" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="683" x2="1058" y1="211.0156" y2="211.0156" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="695" y="206.1592">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="706" y="206.1592">lCustomer</text>
+        <polygon fill="#A80036" points="306,237.3672,296,241.3672,306,245.3672,302,241.3672" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="300" x2="672" y1="241.3672" y2="241.3672" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="312" y="236.5107">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="323" y="236.5107">lCustomer</text>
+        <polygon fill="#A80036" points="63,267.7188,53,271.7188,63,275.7188,59,271.7188" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="57" x2="289" y1="271.7188" y2="271.7188" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="69" y="266.8623">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="80" y="266.8623">shows list of customers</text>
+        <polygon fill="#A80036" points="273,298.0703,283,302.0703,273,306.0703,277,302.0703" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="52" x2="279" y1="302.0703" y2="302.0703" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="59" y="297.2139">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="70" y="297.2139">chooses one</text>
+        <polygon fill="#A80036" points="656,328.4219,666,332.4219,656,336.4219,660,332.4219" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="295" x2="662" y1="332.4219" y2="332.4219" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="302" y="327.5654">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="209" x="313" y="327.5654">lProdOrder = getListProductOrders()</text>
+        <polygon fill="#A80036" points="1232.5,358.7734,1242.5,362.7734,1232.5,366.7734,1236.5,362.7734" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="678" x2="1238.5" y1="362.7734" y2="362.7734" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="685" y="357.917">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="696" y="357.917">findAllActive()</text>
+        <polygon fill="#A80036" points="689,389.125,679,393.125,689,397.125,685,393.125" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="683" x2="1248.5" y1="393.125" y2="393.125" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="695" y="388.2686">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="713" y="388.2686">lProdOrder</text>
+        <polygon fill="#A80036" points="306,419.4766,296,423.4766,306,427.4766,302,423.4766" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="300" x2="672" y1="423.4766" y2="423.4766" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="312" y="418.6201">11</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="330" y="418.6201">lProdOrder</text>
+        <polygon fill="#A80036" points="656,449.8281,666,453.8281,656,457.8281,660,453.8281" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="295" x2="662" y1="453.8281" y2="453.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="302" y="448.9717">12</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="336" x="320" y="448.9717">checkCustomerHasProductOrders(rCustomer, lProdOrder)</text>
+        <polygon fill="#A80036" points="63,510.1797,53,514.1797,63,518.1797,59,514.1797" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="57" x2="289" y1="514.1797" y2="514.1797" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="69" y="509.3232">13</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="191" x="87" y="509.3232">shows list of open product orders</text>
+        <!--
+@startuml
+autonumber
+
+actor "Sales Clerk" as ACT
+
+participant "CheckCustomerOpenOrdersUI" as UI
+participant "CheckCustomerOpenOrdersController" as CTRL
+participant "PersistenceContext" as PCON
+
+participant "cRepo:CustomerRepository" as CREPO
+participant "oRepo:OrderRepository" as OREPO
+
+participant "lCustomer:Iterable<Customer>" as LCUST
+participant "lProdOrder:Iterable<ProductOrder>" as LPROD
+
+activate ACT
+ACT -> UI : initiates process
+activate UI
+UI -> CTRL : lCustomer = getListCustomers()
+activate CTRL
+CTRL -> CREPO : findAllActive()
+activate CREPO
+CREPO -> CTRL : lCustomer
+deactivate CREPO
+CTRL -> UI : lCustomer
+deactivate CTRL
+UI - -> ACT : shows list of customers
+deactivate UI
+
+ACT -> UI : chooses one
+activate UI
+UI -> CTRL : lProdOrder = getListProductOrders()
+activate CTRL
+CTRL -> OREPO : findAllActive()
+activate OREPO
+OREPO -> CTRL : lProdOrder
+deactivate OREPO
+CTRL -> UI: lProdOrder
+deactivate CTRL
+UI -> CTRL : checkCustomerHasProductOrders(rCustomer, lProdOrder)
+activate CTRL
+deactivate CTRL
+UI - -> ACT : shows list of open product orders
+deactivate UI
+
+
+@enduml
+
+PlantUML version 1.2018.14(Fri Dec 21 16:33:16 GMT 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_321-b07
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

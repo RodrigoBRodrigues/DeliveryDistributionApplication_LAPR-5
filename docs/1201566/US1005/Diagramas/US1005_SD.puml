@@ -1,0 +1,37 @@
+@startuml
+autonumber
+actor "SalesClerk" as SC
+
+participant  "RegisterNewCategoryUI <presentation>" as SYS
+participant ":RegisterNewCategoryController <application>" as CTRL
+participant ":CategoryRepository" as CR
+
+note over SC: the factory pattern is not used as the category creation method is simple(3 attributes), the validation is few(size + a regex), and there will not be an enormous amount of categories created
+
+
+
+activate SC
+activate SYS
+
+SC-> SYS: Register Category Option Selected
+
+SYS-> SC: asks alphanumeric code
+SC-> SYS: introduces alphanumeric code
+SYS-> SC: asks description
+SC-> SYS: introduces description
+SYS-> SC: asks name
+SC-> SYS: introduces name
+
+
+
+
+
+SYS-> CTRL : registerCategory(alphanumericcode,description,name)
+deactivate SYS
+activate CTRL
+CTRL -> CR : save(category)
+activate CR
+CR-> SC : (category is saved in the repository)
+deactivate CR
+
+@enduml

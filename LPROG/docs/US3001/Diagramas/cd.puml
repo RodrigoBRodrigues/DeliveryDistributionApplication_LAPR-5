@@ -1,0 +1,253 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Class "DefineSurveyUI"{
+}
+
+Class "SurveyController"{
++buildQuestion(questionDTO)
++buildSection(sectionDTO)
++buildQuestionnaire(questionnaireDTO, fileFlag)
++cleanQuestionList()
++receiveSurveyString()
++receiveFullQuestionnaireString()
+}
+
+Class "AlphanumericCode"{
+-String code
+
++AlphanumericCode(String code)
++valueOf()
++firstName()
++lastName()
++equals(Object o)
++hashCode()
++toString()
+}
+
+Class "Description"{
+-String value
+
++Description(String name)
++valueOf()
++length()
++equals(Object o)
++hashCode()
++toString()
+}
+
+Class "QuestionDTO"{
+     +String questionId
+     +String questionMessage
+     +String instruction
+     +String questionType
+     +String obligatoriness
+     +String extraInfo
+}
+
+Class "QuestionnaireDTO"{
+     +String questionnaireId
+     +String questionnaireTitle
+     +String welcomeMessage
+     +String finalMessage
+}
+
+Class "SectionDTO"{
+    +String sectionId
+    +String sectionTitle
+    +String descriptionString
+    +String obligatoriness
+    +String repeatability
+}
+
+Class "SurveyDTO"{
+     +String alphanumericCodeString
+     +String descriptionString
+     +String period
+     +String content
+}
+
+Class "QuestionDTOParser"{
+     +valueOf(final QuestionDTO dto)
+}
+
+Class "QuestionnaireDTOParser"{
+     +valueOf(final QuestionnaireDTO dto)
+}
+
+Class "SectionDTOParser"{
+     +valueOf(final SectionDTO dto)
+}
+
+Class "SurveyDTOParser"{
+     +valueOf(final SurveyDTO dto)
+}
+
+Class "QuestionBuilder"{
+     -String questionId
+     -String questionMessage
+     -String instruction
+     -String questionType
+     -String obligatoriness
+     -String extraInfo
+
+     +QuestionBuilder(String id, String questionMessage, String type, String obligatoriness)
+     +withInstruction(final String instruction)
+     +withExtraInfo(final String extraInfo)
+     +build()
+}
+
+
+Class "QuestionnaireBuilder"{
+     -String questionnaireId
+     -String questionnaireTitle
+     -String welcomeMessage
+     -String finalMessage
+     -List<Section> sections
+     +QuestionnaireBuilder(String id, String title)
+     +withWelcomeMessage(final String welcomeMessage)
+     +withFinalMessage(final String finalMessage)
+     +build()
+}
+
+Class "SectionBuilder"{
+     - String sectionId
+     - String sectionTitle
+     - String sectionDescription
+     - String obligatoriness
+     - String repeatability
+     - List<Question> questions
+     +SectionBuilder(String sectionId, String sectionTitle, String obligatoriness)
+     +withSectionDescription(final String sectionDescription)
+     +withRepeability(final String repeatability)
+     +build()
+}
+
+
+
+Class "Period"{
+     -String days
+     +Period(String days)
+     +valueOf(String prefix, String phoneNumber)
+}
+Class "Questionnaire"{
+     -String id;
+     -String title;
+     -String welcomeMessage;
+     -List<Section> sections;
+     -String finalMessage;
+
++Questionnaire(id, title, welcomeMessage, sections, finalMessage)
+}
+
+Class "Section"{
+     -String id;
+     -String title;
+     -Description description
+     -Obligatoriness obligatoriness
+     -String repeatability
+     -List<Question> content;
+
+     +Section(id, title, description, obligatoriness, repeatability, content)
+}
+
+Class "Question"{
+     -String id;
+     -String questionMessage;
+     -String instruction;
+     -QuestionType type;
+     -Obligatoriness obligatoriness
+     -String extraInfo
+
+     +Question(id, questionMessage, instruction, type, obligatoriness, extraInfo)
+     +toString()
+}
+
+
+class Content {
+-String fullQuestionnaire;
+-StringBuilder stringbuilder
+
++Content(questionnaire)
++Content(fullQuestionnaire)
++buildQuestionnaireSyntax(questionnaire)
++buildSectionSyntax(sections)
++buildQuestionSyntax(question)
++toString()
+
+}
+
+class Survey{
+-AlphanumericCode alphanumericCode
+-Description description
+-Period period
+-Questionnaire questionnaire
+-Content content
+}
+
+
+
+class PersistenceContext {
+-Logger LOGGER
+-RepositoryFactory theFactory
++repositories()
+}
+
+class RepositoryFactory{
++customers()
+}
+
+class SurveyRepository{
++findById(Long number)
+}
+
+DefineSurveyUI..> "SectionDTO"
+DefineSurveyUI..> "QuestionnaireDTO"
+DefineSurveyUI..> "QuestionDTO"
+DefineSurveyUI..> "SurveyDTO"
+
+SurveyController <.u. "SectionDTO"
+SurveyController <.u. "QuestionnaireDTO"
+SurveyController <.u. "QuestionDTO"
+SurveyController <.u. "SurveyDTO"
+
+SurveyController --> Survey
+
+SurveyController --> "SurveyDTOParser"
+SurveyController --> "QuestionnaireDTOParser"
+SurveyController --> "SectionDTOParser"
+SurveyController --> "QuestionDTOParser"
+
+"Survey" <-u- "SurveyDTOParser"
+"QuestionnaireBuilder" <-u- "QuestionnaireDTOParser"
+"SectionBuilder" <-u- "SectionDTOParser"
+QuestionBuilder <-u- "QuestionDTOParser"
+
+"QuestionnaireBuilder" -d-> "Questionnaire" :builds
+"SectionBuilder" -d-> "Section" :builds
+QuestionBuilder -d-> "Question" :builds
+
+
+"AlphanumericCode" "1" <-u- "1" Survey : contains
+"Description" "1" <-u- "1" Survey : contains
+"Period" "1" <-u- "1" Survey : contains
+"Questionnaire" "1" <-u- "1" Survey : contains
+"Content" "1" <-u- "1" Survey : contains
+
+"Questionnaire" "1" --> "1..*" "Section" :contains
+
+"Section" "1" --> "1..*" "Question" :contains
+
+
+
+"SurveyController" "1" --> "1" "PersistenceContext" :creates
+
+
+"PersistenceContext" "1" --> "1" "RepositoryFactory" :creates
+
+
+"RepositoryFactory" "1" --> "1" "SurveyRepository"  :creates
+
+
+"Survey" "1" --> "1" "SurveyRepository" :in
+@enduml

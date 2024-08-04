@@ -1,0 +1,290 @@
+Pseudo-código
+----------------------
+
+thread_control_system:
+
+inicializar as outras threads;
+while(1){
+change_speed_flag=0;
+current_speed=AGV_SPEED;
+
+percorrer os sensores e verificar se há algum obstaculo a 2 ou menos quadrados
+se sim {
+		change_speed_flag=1;
+}
+
+if (change_speed_flag == 1){
+	current_speed *=2;
+}
+
+usleep(100000); ->atualiza a cada 100 milisegundos
+}
+
+----------------------
+
+thread_battery_management:
+
+while(1){
+	if(current_position== agvdock_type_position{
+		if(current_battery<battery_capacity){
+		sleep(1);
+		
+		current_battery++;
+		}
+	}else{
+	cond_wait(has_moved_cond);
+	current_battery--;
+	
+	}	
+		
+}
+
+----------------------
+
+thread_route_planner:
+
+	getWarehouse(ip, cli, warehouse);
+	while(current_positionX!=product_positionX || current_positionY!=product_positionY){
+		 while(current_positionX!=product_positionX){
+		 sleep(current_speed);
+		 if(current_positionX>product_positionX){
+			if(obstaculos[0]!=1){
+				movement_direction=UP;
+					cond_signal(&can_move);
+					cond_broadcast(&has_moved);
+				}else if (current_positionY> WAREHOUSE_LENGTH/2 && obstaculos[2] != 1){
+				
+				movement_direction=RIGHT;
+				
+				pthread_cond_signal(&can_move);
+                pthread_cond_broadcast(&has_moved);
+				}else if(obstaculos[6] != 1){
+					movement_direction=LEFT;
+					pthread_cond_signal(&can_move);
+                    pthread_cond_broadcast(&has_moved);
+				}
+				
+		}
+		if(current_positionX<product_positionX){
+			if(obstaculos[4]!=1){
+				movement_direction=DOWN;
+					cond_signal(&can_move);
+					cond_broadcast(&has_moved);
+				}else if (current_positionY< WAREHOUSE_LENGTH/2 && obstaculos[2] != 1){
+				
+				movement_direction=RIGHT;
+				
+				pthread_cond_signal(&can_move);
+                pthread_cond_broadcast(&has_moved);
+				}else if(obstaculos[6] != 1){
+					movement_direction=LEFT;
+					pthread_cond_signal(&can_move);
+                    pthread_cond_broadcast(&has_moved);
+				}
+				
+		}
+		
+	}
+	while(current_positionY!=product_positionY){
+	sleep(current_speed);
+		 if(current_positionT>product_positionY){
+			if(obstaculos[6]!=1){
+				movement_direction=LEFT;
+					cond_signal(&can_move);
+					cond_broadcast(&has_moved);
+				}else if (current_positionX> WAREHOUSE_WIDTH/2 && obstaculos[0] != 1){
+				
+				movement_direction=UP;
+				
+				pthread_cond_signal(&can_move);
+                pthread_cond_broadcast(&has_moved);
+				}else if(obstaculos[4] != 1){
+					movement_direction=DOWN;
+					pthread_cond_signal(&can_move);
+                    pthread_cond_broadcast(&has_moved);
+				}
+				
+		}
+		if(current_positionY<product_positionY){
+			if(obstaculos[2]!=1){
+				movement_direction=RIGHT;
+					cond_signal(&can_move);
+					cond_broadcast(&has_moved);
+				}else if (current_positionY< WAREHOUSE_WIDTH/2 && obstaculos[0] != 1){
+				
+				movement_direction=Y;
+				
+				pthread_cond_signal(&can_move);
+                pthread_cond_broadcast(&has_moved);
+				}else if(obstaculos[4] != 1){
+					movement_direction=DOWN;
+					pthread_cond_signal(&can_move);
+                    pthread_cond_broadcast(&has_moved);
+				}
+				
+		}
+		
+	}
+}
+
+----------------------
+
+thread_positioning:
+
+while(1){
+	cond_wait(can move);
+	sleep(current_speed);
+	direction_received=movement_received;
+	switch(direction_received){
+		case 1:
+			current_positionX--; "subir"
+			warehouse[previous_positionX][previous_positionY] = 0;
+			warehouse[current_positionX][current_positionY] = 3;
+			previous_positionX = current_positionX;
+			previous_positionY = current_positionY;
+			cond_signal(battery_discharge);
+			break;
+		case 2:
+		current_positionX++; "descer"
+			warehouse[previous_positionX][previous_positionY] = 0;
+			warehouse[current_positionX][current_positionY] = 3;
+			previous_positionX = current_positionX;
+			previous_positionY = current_positionY;
+			cond_signal(battery_discharge);
+			break;
+		case 3:
+			current_positionY++; "ir para a direita"
+			warehouse[previous_positionX][previous_positionY] = 0;
+			warehouse[current_positionX][current_positionY] = 3;
+			previous_positionX = current_positionX;
+			previous_positionY = current_positionY;
+			cond_signal(battery_discharge);
+			break;
+		case 4:
+			 current_positionY--;"ir para a esquerda"
+			 warehouse[previous_positionX][previous_positionY] = 0;
+			 warehouse[current_positionX][current_positionY] = 3;
+			 previous_positionX = current_positionX;
+			 previous_positionY = current_positionY;
+			 cond_signal(battery_discharge);
+			 break;
+	}
+	
+	 if(current_positionX == product_positionX && current_positionY == product_positionY ){
+			product_positionX = dock_of_this_agv_X;
+			
+			product_positionY = dock_of_this_agv_Y;
+	 
+	 }
+}
+
+----------------------
+
+thread_sensors:
+
+	int num;
+    num = *((int*)arg); numero do sensor
+	
+	int positionXSnapshot=current_positionX;
+    int positionYSnapshot=current_positionY;
+    int positionX=current_positionX;
+    int positionY=current_positionY;
+	
+	switch(num){
+            case 0:
+                
+                while (positionXSnapshot>0){
+                    positionXSnapshot--;
+                    obstaculos[0]=0;
+                    
+                    if (warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+                        obstaculos[0]= abs(positionX-positionXSnapshot);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                while(positionYSnapshot<WAREHOUSE_LENGTH-1 && positionXSnapshot >0){
+                    positionYSnapshot++;
+                    positionXSnapshot--;
+                    obstaculos[1]=0;
+                    if(warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+                        obstaculos[1] =  abs(positionYSnapshot-positionY);
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                while (positionYSnapshot<WAREHOUSE_LENGTH-1){
+                    positionYSnapshot++;
+                    obstaculos[2]=0;
+                    if (warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+                        obstaculos[2] =  abs(positionYSnapshot-positionY);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                while (positionYSnapshot<WAREHOUSE_LENGTH-1 && positionXSnapshot<WAREHOUSE_WIDTH-1){
+                    positionYSnapshot++;
+                    positionXSnapshot++;
+                    obstaculos[3]=0;
+                    if(warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+
+                        obstaculos[3] = abs(positionYSnapshot-positionY);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                while (positionXSnapshot<WAREHOUSE_WIDTH-1){
+                    positionXSnapshot++;
+                    obstaculos[4]=0;
+                    if (warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+
+                        obstaculos[4] = abs(positionXSnapshot-positionX);
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                while (positionXSnapshot<WAREHOUSE_WIDTH-1 && positionYSnapshot>0){
+                    positionXSnapshot++;
+                    positionYSnapshot--;
+                    obstaculos[5]=0;
+                    if(warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+
+                        obstaculos[5] = abs(positionY-positionYSnapshot);
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                while (positionYSnapshot>0){
+                    positionYSnapshot--;
+                    obstaculos[6]=0;
+                    if (warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+
+                        obstaculos[6]= abs(positionY-positionYSnapshot);
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                while(positionYSnapshot>0 && positionXSnapshot >0){
+                    positionYSnapshot--;
+                    positionXSnapshot--;
+                    obstaculos[7]=0;
+
+                    if(warehouse[positionXSnapshot][positionYSnapshot]!=0 && warehouse[positionXSnapshot][positionYSnapshot]!=4){
+                        //printf(" SENSOR 7  Obstacle %d spaces away\n", positionY-positionYSnapshot);
+                        obstaculos[7] = abs(positionY-positionYSnapshot);
+                        break;
+                    }
+                }
+                break;
+            default:
+                printf("error in sensor\n");
+                break;
+        }
+		cond_wait(has_moved);

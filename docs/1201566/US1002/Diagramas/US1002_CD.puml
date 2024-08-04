@@ -1,0 +1,50 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Class "CheckProductCatalogUI"{
+doShow()
+headline()
+}
+
+Class "CheckProductCatalogController"{
++allProducts(int num)
++allProductsWithCategory(categoryName,num)
++allProductsWithBrand(categoryName,num)
++allProductsWithBrandCategory(categoryName,num)
+}
+
+Class "CheckProductCatalogService"{
++allProductsWithoutRestrictions(int num)
++allProductsWithCategory(categoryName,num)
++allProductsWithBrand(categoryName,num)
++allProductsWithBrandCategory(categoryName,num)
+}
+
+Class "ProductRepository"{
++findProductsWithBrandCategory(brand,category,num);
++findProductsWithBrand(brand,num);
++findProductsWithCategory(category,num);
++findAllProducts(num);
+
+}
+
+Class "Product"{
+
++toString()
+...
+}
+
+
+CheckProductCatalogUI..> CheckProductCatalogController
+
+CheckProductCatalogController ..> CheckProductCatalogService
+
+CheckProductCatalogService ..> ProductRepository
+
+ProductRepository ..> Product :"shows"
+
+
+
+
+
+@enduml

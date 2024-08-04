@@ -1,0 +1,22 @@
+@startuml
+participant AGVManager <<Server>>
+
+
+loop true
+Activate DigitalTwinServer
+DigitalTwinServer -> DigitalTwinServer: start
+DigitalTwinServer -> TCPAGVServer: accept
+
+
+
+participant TCPAGVServerThread  <<thread>>
+activate TCPAGVServerThread
+TCPAGVServer -> TCPAGVServerThread : start
+end
+
+TCPAGVServerThread -> TCPAGVServer:parse
+TCPAGVServerThread  -> TCPAGVServerThread : execute
+TCPAGVServerThread  -> TCPAGVServer:build
+
+TCPAGVServerThread  --> AGVManager
+@enduml

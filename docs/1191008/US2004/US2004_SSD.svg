@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="378px" preserveAspectRatio="none" style="width:359px;height:378px;" version="1.1" viewBox="0 0 359 378" width="359px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1vnh1j81u0dfa" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="183.1094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="75.5" y="97.6094" />
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="315.5" y="119.9609" />
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="315.5" y="180.6641" />
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="39.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="315.5" y="241.3672" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="80" x2="80" y1="87.6094" y2="289.7188" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="320.5" x2="320.5" y1="87.6094" y2="289.7188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="8" y="84.5332">Warehouse Employee</text>
+        <ellipse cx="80.5" cy="13" fill="#FEFECE" filter="url(#f1vnh1j81u0dfa)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M80.5,21 L80.5,48 M67.5,29 L93.5,29 M80.5,48 L67.5,63 M80.5,48 L93.5,63 " fill="none" filter="url(#f1vnh1j81u0dfa)" style="stroke: #A80036; stroke-width: 2.0;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="8" y="303.252">Warehouse Employee</text>
+        <ellipse cx="80.5" cy="316.3281" fill="#FEFECE" filter="url(#f1vnh1j81u0dfa)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M80.5,324.3281 L80.5,351.3281 M67.5,332.3281 L93.5,332.3281 M80.5,351.3281 L67.5,366.3281 M80.5,351.3281 L93.5,366.3281 " fill="none" filter="url(#f1vnh1j81u0dfa)" style="stroke: #A80036; stroke-width: 2.0;" />
+        <rect fill="#FEFECE" filter="url(#f1vnh1j81u0dfa)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="288.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="295.5" y="72.5332">System</text>
+        <rect fill="#FEFECE" filter="url(#f1vnh1j81u0dfa)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="288.5" y="288.7188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="295.5" y="310.252">System</text>
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="183.1094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="75.5" y="97.6094" />
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="315.5" y="119.9609" />
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="315.5" y="180.6641" />
+        <rect fill="#FFFFFF" filter="url(#f1vnh1j81u0dfa)" height="39.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="315.5" y="241.3672" />
+        <polygon fill="#A80036" points="303.5,115.9609,313.5,119.9609,303.5,123.9609,307.5,119.9609" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="85.5" x2="309.5" y1="119.9609" y2="119.9609" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="83" x="92.5" y="115.1045">starts process</text>
+        <polygon fill="#A80036" points="96.5,146.3125,86.5,150.3125,96.5,154.3125,92.5,150.3125" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="90.5" x2="319.5" y1="150.3125" y2="150.3125" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="206" x="102.5" y="145.4561">shows list of eligible product Orders</text>
+        <polygon fill="#A80036" points="303.5,176.6641,313.5,180.6641,303.5,184.6641,307.5,180.6641" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="85.5" x2="309.5" y1="180.6641" y2="180.6641" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="92.5" y="175.8076">chooses one</text>
+        <polygon fill="#A80036" points="96.5,207.0156,86.5,211.0156,96.5,215.0156,92.5,211.0156" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="90.5" x2="319.5" y1="211.0156" y2="211.0156" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="124" x="102.5" y="206.1592">requests confirmation</text>
+        <polygon fill="#A80036" points="303.5,237.3672,313.5,241.3672,303.5,245.3672,307.5,241.3672" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="85.5" x2="309.5" y1="241.3672" y2="241.3672" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="92.5" y="236.5107">confirms choice</text>
+        <polygon fill="#A80036" points="96.5,267.7188,86.5,271.7188,96.5,275.7188,92.5,271.7188" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="90.5" x2="314.5" y1="271.7188" y2="271.7188" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="175" x="102.5" y="266.8623">informs of operation's success</text>
+        <!--
+@startuml
+
+actor "Warehouse Employee" as ACT
+participant "System" as SYS
+
+activate ACT
+ACT -> SYS : starts process
+activate SYS
+SYS - -> ACT : shows list of eligible product Orders
+deactivate SYS
+ACT -> SYS : chooses one
+activate SYS
+SYS - -> ACT : requests confirmation
+deactivate SYS
+ACT -> SYS : confirms choice
+activate SYS
+SYS - -> ACT: informs of operation's success
+
+@enduml
+
+PlantUML version 1.2018.14(Fri Dec 21 16:33:16 GMT 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_221-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

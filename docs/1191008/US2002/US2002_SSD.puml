@@ -1,0 +1,31 @@
+@startuml
+autonumber
+
+actor "Warehouse Employee" as ACT
+participant "System" as SYS
+
+activate ACT
+ACT -> SYS : starts configuration process
+activate SYS
+
+SYS -> ACT : asks for AGV specs
+deactivate SYS
+
+ACT -> SYS : submits information
+activate SYS
+
+SYS -> ACT : show list of AGV Docks
+deactivate SYS
+
+ACT -> SYS : chooses one
+activate SYS
+SYS -> ACT : shows resulting AGV and asks for confirmation
+deactivate SYS
+
+ACT -> SYS : confirms
+activate SYS
+SYS -> ACT : informs of operation's success
+deactivate SYS
+deactivate ACT
+
+@enduml

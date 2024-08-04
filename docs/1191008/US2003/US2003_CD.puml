@@ -1,0 +1,66 @@
+@startuml
+
+class "UpdateOrderStateToBePreparedUI" as UI{
+  +doShow()
+  +headline()
+}
+
+class "UpdateOrderStateToBePreparedController" as CTRL {
+  +getListProductOrders()
+  +getListAGV()
+  +updateOrderState(ProductOrder)
+  +save(ProductOrder)
+  +save(AGV)
+  +assignProductOrder(ProductOrder, AGV)
+}
+
+class "OrderRepository" as OREPO {
+  +findByState(orderState)
+  +save(ProductOrder)
+}
+
+class "AGVRepository" as AREPO {
+  +findAll()
+}
+
+class "ProductOrder" as ORDER {
+  +setOrderState(OrderState)
+}
+
+class "AGV" as AGV {
+  +addProductOrderWithPriority(ProductOrder)
+}
+
+class "OrderState" as STATE {
+
+}
+
+class "PersistenceContext" as PCON {
+  -Logger LOGGER
+  -RepositoryFactory theFactory
+  +repositories()
+}
+
+class "RepositoryFactory" as REPOFAC {
+  +agvs()
+  +orders()
+}
+
+UI ..> CTRL
+CTRL ->"1" OREPO : adopts
+CTRL ->"1" AREPO : adopts
+CTRL -> "1" ORDER : finds
+CTRL -> "1" AGV : finds
+
+CTRL "1" --> "1" PCON : uses
+PCON "1" --> "1" REPOFAC : creates
+
+REPOFAC "1" --> "1" AREPO : stores
+REPOFAC "1" --> "1" OREPO : stores
+
+AREPO "1" --> "*" AGV : stores
+OREPO "1" --> "*" ORDER : stores
+
+STATE "1" --> "*" ORDER : describes
+
+@enduml

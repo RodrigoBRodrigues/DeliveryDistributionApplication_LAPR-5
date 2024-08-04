@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+  <persistence-unit name="eapli.base">
+    <!--
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    -->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>eapli.base.productCategory.domain.Category</class>
+    <class>eapli.base.productCategory.domain.AlphaNumericCode</class>
+    <class>eapli.base.product.domain.Product</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.SystemUser</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.Role</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.RoleSet</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.RoleAssignment</class>
+    <class>eapli.base.clientusermanagement.domain.Customer</class>
+    <class>eapli.base.clientusermanagement.domain.Address</class>
+    <class>eapli.base.clientusermanagement.domain.Gender</class>
+    <class>eapli.base.clientusermanagement.domain.PhoneNumber</class>
+    <class>eapli.base.clientusermanagement.domain.Vat</class>
+    <class>eapli.base.warehousemanagement.domain.Warehouse</class>
+    <class>eapli.base.productOrder.domain.ProductOrder</class>
+    <class>eapli.base.productOrder.domain.OrderState</class>
+    <class>eapli.base.productOrder.domain.Shipment</class>
+    <class>eapli.base.productOrder.domain.Payment</class>
+    <class>eapli.base.productOrder.domain.OrderLine</class>
+    <class>eapli.base.agv.domain.AGV</class>
+    <class>eapli.base.agv.domain.AGVState</class>
+    <class>eapli.base.agv.domain.AGVModel</class>
+    <class>eapli.base.agv.domain.DockingPoint</class>
+    <class>eapli.base.questionnaire.domain.Survey</class>
+    <class>eapli.base.questionnaire.domain.Answer</class>
+
+
+    <class>java.time.LocalDate</class>
+
+
+    <properties>
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/base"/>-->
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:~\base;DB_CLOSE_ON_EXIT=FALSE;MV_STORE=FALSE;AUTO_SERVER=true;"/>
+
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.password" value="eapli"/>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <!-- <property name="eclipselink.logging.level" value="FINE"/> -->
+      <!-- <property name = "hibernate.show_sql" value = "true" /> -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+    </properties>
+  </persistence-unit>
+</persistence>

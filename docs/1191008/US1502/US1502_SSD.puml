@@ -1,0 +1,21 @@
+@startuml
+autonumber
+
+actor "Sales Clerk" as ACT
+participant "System" as SYS
+
+activate ACT
+ACT -> SYS : Starts process
+
+activate SYS
+SYS --> ACT : shows list of customers to select from
+deactivate SYS
+
+ACT -> SYS : selects one
+
+activate SYS
+SYS --> ACT : shows list of open product orders
+deactivate SYS
+deactivate ACT
+
+@enduml

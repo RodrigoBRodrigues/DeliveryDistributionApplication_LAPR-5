@@ -1,0 +1,125 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class "CreateProductOrderUI" as UI {
+  +run()
+}
+
+class "CreateProductOrderController" as CTRL {
+  +getCustomerList()
+  +createOrder(Customer)
+  +getProductList()
+  +addProductToOrder(Product, int no)
+  +saveOrder()
+}
+
+class "PersistenceContext" as PCON {
+  -Logger LOGGER
+  -RepositoryFactory theFactory
+  +repositories()
+}
+
+class "Order" as ORDER {
+  -int id
+  -Date date
+  -int customer id
+  -Address billingAddress
+  -Address deliveryAddress
+  -double totalAmount
+  -String payCode
+  -State state
+
+}
+
+class "OrderRepository" as ORDERREPO {
+
+}
+
+class "Customer" as CUST {
+  -Name name;
+  -Vat vat;
+  -Date dateOfBirth;
+  -PhoneNumber phoneNumber;
+  -Address address;
+}
+
+class "CustomerRepository" as CUSTREPO {
+  +getCustomerList()
+}
+
+class "Product" as PROD {
+
+}
+
+class "ProductRepository" as PRODREPO {
+  +getProductList()
+}
+
+class "RepositoryFactory" as REPOFAC {
+  +getCustomerRepo()
+  +getOrderRepo()
+  +getProductRepo()
+
+}
+
+class "OrderBuilder" as BUILDER {
+
+}
+
+class "Address" as ADRS {
+  -Name streetName
+  -PostalCode postalCode
+  -Integer doorNumber
+  -City city
+  -Country country
+  -AddressType addressType
+
+  +Address(streetName, postalCode, doorNumber, city, country)
+  +valueOf()
+  +streetName()
+  +postalCode()
+  +doorNumber()
+  +city()
+  +country()
+  +addressType()
+  +equals(Object o)
+  +hashCode()
+  +toString()
+}
+
+enum "AddressType" as ADRSTYPE {
+  +BILLING
+  +SHIPMENT
+}
+
+
+
+UI ..> CTRL
+
+CTRL "1" --> "1" PCON : uses
+CTRL ..> BUILDER
+CTRL "1" --> "*" ORDER : creates
+
+PCON "1" --> "1" REPOFAC : creates
+
+REPOFAC "1" --> "1" CUSTREPO : stores
+REPOFAC "1" --> "1" ORDERREPO : stores
+REPOFAC "1" --> "1" PRODREPO : stores
+
+ORDERREPO "1" --> "*" ORDER : stores
+PRODREPO "1" --> "*" PROD : stores
+CUSTREPO "1" --> "*" CUST : stores
+
+ORDER "1" --> "2" ADRS : contains
+CUST "1" --> "1" ADRS : contains
+ORDER "1" --> "0..*" PROD : contains
+
+ADRSTYPE "1" --> "*" ADRS : categorizes
+
+BUILDER "1" --> "*" ORDER : builds
+
+
+
+
+
+@enduml

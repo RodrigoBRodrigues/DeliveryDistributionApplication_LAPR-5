@@ -1,0 +1,48 @@
+ID: 75
+TITLE: Smartphones Questionnaire
+FINAL MESSAGE: Questionnaire over
+
+LIST OF SECTIONS:
+
+SECTION ID: 1
+SECTION TITLE: Price
+SECTION DESCRIPTION: Description for questionnaire
+OBLIGATORINESS: CONDITION_DEPENDENT
+
+CONTENT:
+
+QUESTION ID: 1
+Q: Do you think that our phones are too highly priced?
+OBLIGATORINESS: MANDATORY
+TYPE: SINGLE_CHOICE
+EXTRA INFO: 0- NO|1- YES
+
+QUESTION ID: 2
+Q: Have you bought any phones of ours in the past week
+OBLIGATORINESS: MANDATORY
+TYPE: SINGLE_CHOICE
+EXTRA INFO: 0- NO|1- YES
+
+QUESTION ID: 3
+Q: Please Describe you opinion about the phones you purchased
+OBLIGATORINESS: CONDITION_DEPENDENT
+TYPE: FREE_TEXT
+
+SECTION ID: 2
+SECTION TITLE: Furniture
+SECTION DESCRIPTION: Furniture purchased in our product
+OBLIGATORINESS: OPTIONAL
+
+CONTENT:
+
+QUESTION ID: 4
+Q: Did you plan on buying any furniture when using our product
+OBLIGATORINESS: MANDATORY
+TYPE: SCALING_OPTIONS
+EXTRA INFO: 0- Not at all|1- Not Very Much|2- Kind of|3- I was Interested|4- It was the reason I used the product
+
+QUESTION ID: 5
+Q: Do you collect specific types of furniture
+OBLIGATORINESS: OPTIONAL
+TYPE: SINGLE_CHOICE
+EXTRA INFO: 0- Yes|1- No

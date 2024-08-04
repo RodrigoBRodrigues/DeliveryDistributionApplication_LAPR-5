@@ -1,0 +1,61 @@
+@startuml
+autonumber
+actor "Sales Clerk" as MEDLT
+
+activate MEDLT
+MEDLT-> ":System" : registing new customers
+
+activate ":System"
+":System" --> MEDLT : asks name
+
+deactivate ":System"
+
+
+MEDLT-> ":System" : introduces name
+
+activate ":System"
+
+":System" -> MEDLT : asks Vat
+deactivate ":System"
+
+
+
+
+MEDLT -> ":System" : introduces Vat
+activate ":System"
+":System" -> MEDLT : asks email
+deactivate ":System"
+
+alt
+
+MEDLT -> ":System" : introduces email
+activate ":System"
+":System" -> MEDLT : asks mobilephone number
+deactivate ":System"
+
+MEDLT -> ":System" : introduces mobilephone number
+activate ":System"
+":System" -> MEDLT : asks birthdate
+deactivate ":System"
+
+MEDLT -> ":System" : introduces birthdate
+activate ":System"
+":System" -> MEDLT : asks gender
+deactivate ":System"
+
+MEDLT -> ":System" : introduces gender
+activate ":System"
+":System" -> MEDLT : asks address
+deactivate ":System"
+
+MEDLT -> ":System" : introduces address
+activate ":System"
+end alt
+
+
+":System" -> MEDLT : ok
+deactivate ":System"
+
+
+
+@enduml

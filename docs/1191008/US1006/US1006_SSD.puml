@@ -1,0 +1,19 @@
+@startuml
+
+actor "Sales Clerk" as ACT
+participant "System" as SYS
+
+activate ACT
+ACT -> SYS : starts process
+activate SYS
+SYS --> ACT : shows list of eligible product Orders
+deactivate SYS
+ACT -> SYS : chooses one
+activate SYS
+SYS --> ACT : requests confirmation
+deactivate SYS
+ACT -> SYS : confirms choice
+activate SYS
+SYS --> ACT: informs of operation's success
+
+@enduml

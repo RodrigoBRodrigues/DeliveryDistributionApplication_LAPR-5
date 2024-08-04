@@ -1,0 +1,34 @@
+@startuml
+participant AGVManager <<Server>>
+Activate DigitalTwinServer
+
+DigitalTwinServer -> System: setProperty("javax.net.ssl.trustStore", TRUSTED_STORE)
+DigitalTwinServer -> System: setProperty("javax.net.ssl.trustStorePassword", KEYSTORE_PASS)
+
+DigitalTwinServer -> System: setProperty("javax.net.ssl.keyStore", TRUSTED_STORE)
+DigitalTwinServer -> System: setProperty("javax.net.ssl.keyStorePassword", KEYSTORE_PASS)
+
+DigitalTwinServer -> SSLServerSocketFactory** : sslF = getDefault()
+activate SSLServerSocketFactory
+
+DigitalTwinServer -> SSLServerSocketFactory : socket = sslF.createServerSocket(PORT_NUMBER)
+DigitalTwinServer -> SSLServerSocketFactory : sock.setNeedClientAuth(true)
+deactivate SSLServerSocketFactory
+
+loop true
+DigitalTwinServer -> DigitalTwinServer: start
+DigitalTwinServer -> TCPAGVServer: accept
+
+
+
+participant TCPAGVServerThread  <<thread>>
+activate TCPAGVServerThread
+TCPAGVServer -> TCPAGVServerThread : start
+end
+
+TCPAGVServerThread -> TCPAGVServer:parse
+TCPAGVServerThread  -> TCPAGVServerThread : execute
+TCPAGVServerThread  -> TCPAGVServer:build
+
+TCPAGVServerThread  --> AGVManager
+@enduml

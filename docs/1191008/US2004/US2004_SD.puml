@@ -1,0 +1,44 @@
+@startuml
+
+actor "Warehouse Employee" as ACT
+
+participant "UpdateOrderStateReadyUI" as UI
+participant "UpdateOrderStateReadyController" as CTRL
+
+participant "oRepo:OrderRepository" as OREPO
+
+participant "rProd:ProductOrder" as ORDER
+participant "lProd:Iterable<ProductOrder>" as IORDER
+participant "orderState:OrderState" as STATE
+
+activate ACT
+ACT -> UI : starts operation
+activate UI
+UI -> CTRL : lProd = getListProductOrders()
+activate CTRL
+CTRL -> OREPO : findByState(OrderState)
+activate OREPO
+deactivate OREPO
+deactivate CTRL
+UI --> ACT : shows list of product orders in "TO_BE_PREPARED" state
+deactivate UI
+
+ACT -> UI : selects one
+activate UI
+UI -> CTRL : rProd = updateOrderState(rProd)
+activate CTRL
+CTRL -> ORDER : setOrderState(OrderState)
+activate ORDER
+deactivate ORDER
+deactivate CTRL
+UI -> CTRL : save(rProd)
+activate CTRL
+CTRL -> OREPO : save(rProd)
+activate OREPO
+deactivate OREPO
+deactivate CTRL
+UI --> ACT : informs of operation's success
+deactivate UI
+deactivate ACT
+
+@enduml

@@ -1,0 +1,61 @@
+@startuml
+autonumber
+actor "Warehouse Employee" as MEDLT
+
+activate MEDLT
+MEDLT-> ":System" : Define new Survey
+
+activate ":System"
+":System" --> MEDLT : Asks to select between inputting or importing txt
+
+deactivate ":System"
+
+alt
+MEDLT-> ":System" : selects inputting all the information
+activate ":System"
+
+
+":System" -> MEDLT : asks survey related information
+
+MEDLT-> ":System" : inserts survey related information
+
+
+":System" -> MEDLT : asks questionnaire related information
+
+MEDLT-> ":System" : inserts questionnaire related information
+
+loop while doesn't want to define more sections
+
+":System" -> MEDLT : asks section related information
+
+MEDLT-> ":System" : inserts section related information
+
+loop while doesn't want to define more questions
+":System" -> MEDLT : asks question related information
+
+MEDLT-> ":System" : inserts question related information
+
+end loop
+end loop
+
+end alt
+
+alt
+MEDLT-> ":System" : selects to import a file
+
+":System" -> MEDLT : asks survey related information
+
+MEDLT-> ":System" : inserts survey related information
+
+":System" -> MEDLT : asks the path of the file
+
+MEDLT-> ":System" : inserts the path of the file
+
+
+end alt
+
+
+
+":System" -> MEDLT : presents the survey created
+deactivate ":System"
+@enduml

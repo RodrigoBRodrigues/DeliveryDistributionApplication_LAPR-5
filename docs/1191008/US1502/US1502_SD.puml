@@ -1,0 +1,47 @@
+@startuml
+autonumber
+
+actor "Sales Clerk" as ACT
+
+participant "CheckCustomerOpenOrdersUI" as UI
+participant "CheckCustomerOpenOrdersController" as CTRL
+participant "PersistenceContext" as PCON
+
+participant "cRepo:CustomerRepository" as CREPO
+participant "oRepo:OrderRepository" as OREPO
+
+participant "lCustomer:Iterable<Customer>" as LCUST
+participant "lProdOrder:Iterable<ProductOrder>" as LPROD
+
+activate ACT
+ACT -> UI : initiates process
+activate UI
+UI -> CTRL : lCustomer = getListCustomers()
+activate CTRL
+CTRL -> CREPO : findAllActive()
+activate CREPO
+CREPO -> CTRL : lCustomer
+deactivate CREPO
+CTRL -> UI : lCustomer
+deactivate CTRL
+UI --> ACT : shows list of customers
+deactivate UI
+
+ACT -> UI : chooses one
+activate UI
+UI -> CTRL : lProdOrder = getListProductOrders()
+activate CTRL
+CTRL -> OREPO : findAllActive()
+activate OREPO
+OREPO -> CTRL : lProdOrder
+deactivate OREPO
+CTRL -> UI: lProdOrder
+deactivate CTRL
+UI -> CTRL : checkCustomerHasProductOrders(rCustomer, lProdOrder)
+activate CTRL
+deactivate CTRL
+UI --> ACT : shows list of open product orders
+deactivate UI
+
+
+@enduml

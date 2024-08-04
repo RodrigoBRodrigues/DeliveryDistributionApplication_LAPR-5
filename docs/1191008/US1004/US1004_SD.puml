@@ -1,0 +1,107 @@
+@startuml
+autonumber
+
+actor "Sales Clerk" as ACT
+
+participant "CreateProductOrderUI" as UI
+participant "CreateProductOrderController" as CTRL
+participant "PersistenceContext" as PCON
+participant "OrderBuilder" as BUILDER
+participant "RepositoryFactory" as REPOFAC
+participant "OrderRepository" as ORDERREPO
+participant "CustomerRepository" as CUSTREPO
+participant "ProductRepository" as PRODREPO
+participant "Order" as ORDER
+participant "Customer" as CUST
+participant "Product" as PROD
+
+activate ACT
+ACT -> UI : initiates process
+activate UI
+UI -> CTRL : getCustomerList()
+activate CTRL
+CTRL -> PCON : getRepositoryFactory()
+activate PCON
+PCON -> REPOFAC : createRepositoryFactory()
+activate REPOFAC
+deactivate REPOFAC
+PCON -> CTRL : RepositoryFactory
+deactivate PCON
+CTRL -> REPOFAC : getCustomerRepo()
+activate REPOFAC
+REPOFAC -> CTRL : CustomerRepository
+deactivate REPOFAC
+CTRL -> CUSTREPO : getCustomerList()
+activate CUSTREPO
+CUSTREPO -> CTRL : List<Customer>
+deactivate CUSTREPO
+CTRL -> UI : List<Customer>
+deactivate CTRL
+UI -> ACT : shows customer list & requests to pick one
+deactivate UI
+
+ACT -> UI : picks one
+activate UI
+UI -> CTRL : createOrder(Customer)
+activate CTRL
+CTRL -> BUILDER : createOrder(Customer)
+activate BUILDER
+BUILDER -> ORDER : create
+activate ORDER
+deactivate ORDER
+deactivate BUILDER
+deactivate CTRL
+UI -> CTRL : getProductList()
+activate CTRL
+CTRL -> REPOFAC : getProductRepo()
+activate REPOFAC
+REPOFAC -> CTRL : ProductRepository
+deactivate REPOFAC
+CTRL -> PRODREPO : getProductList()
+activate PRODREPO
+PRODREPO -> CTRL : List<Product>
+deactivate PRODREPO
+CTRL -> UI : List<Product>
+deactivate CTRL
+loop
+UI -> ACT : shows list of products
+deactivate UI
+
+ACT -> UI : selects one to add to productOrder & quantity
+activate UI
+UI -> CTRL : addProductToOrder(Product, int no)
+activate CTRL
+CTRL -> BUILDER : addProduct(Product, int no)
+activate BUILDER
+BUILDER -> ORDER : addProduct(Product, int no)
+activate ORDER
+deactivate ORDER
+deactivate BUILDER
+deactivate CTRL
+end loop
+UI -> ACT : shows end result & requests confirmation
+deactivate UI
+
+ACT -> UI : confirms submission
+activate UI
+UI -> CTRL : saveOrder()
+activate CTRL
+CTRL -> BUILDER : getOrder()
+activate BUILDER
+BUILDER -> CTRL : Order
+deactivate BUILDER
+CTRL -> REPOFAC : getOrderRepo()
+activate REPOFAC
+REPOFAC -> CTRL : OrderRepository
+deactivate REPOFAC
+CTRL -> ORDERREPO : saveOrder(Order)
+activate ORDERREPO
+ORDERREPO -> ORDERREPO : validateOrder(Order)
+ORDERREPO -> ORDERREPO : addToRepo(Order)
+deactivate ORDERREPO
+deactivate CTRL
+UI -> ACT : Informs of successful operation
+deactivate UI
+deactivate ACT
+
+@enduml

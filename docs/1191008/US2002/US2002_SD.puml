@@ -1,0 +1,80 @@
+@startuml
+autonumber
+
+actor "Warehouse Employee" as ACT
+
+participant "CreateAGVUI" as UI
+participant "CreateAVGController" as CTRL
+participant "AGV" as AGV
+participant "AGVBuilder" as BUILDER
+participant "RepositoryFactory" as REPOFAC
+participant "AGVRepository" as AREPO
+participant "PersistenceContext" as PCON
+participant "WarehouseInfo" as WI
+
+activate ACT
+ACT -> UI : starts process
+activate UI
+UI -> PCON : repositories()
+activate PCON
+PCON -> REPOFAC : agvs()
+activate REPOFAC
+REPOFAC -> PCON : AGVRepository
+deactivate REPOFAC
+PCON -> UI : AGVRepository
+deactivate PCON
+UI -> ACT: requests AGV information(i.e: autonomy, capacity, weight, volume, shortDescription)
+deactivate UI
+
+loop
+ACT -> UI : submits information
+activate UI
+UI-> WI : getAVGDocks()
+activate WI
+WI -> UI : AGVDocks
+deactivate WI
+UI -> ACT : shows list of AGV Docks
+deactivate UI
+
+ACT -> UI : picks one
+activate UI
+UI -> AREPO : validateAgvBaseLocation(agvDockId)
+activate AREPO
+AREPO -> UI : boolean
+deactivate AREPO
+end loop
+UI -> CTRL : createAGV(autonomy, capacity, weight, volume, shortDescription, agvDockId)
+activate CTRL
+CTRL -> BUILDER : createAGV(autonomy, capacity, weight, volume, shortDescription, agvDockId)
+activate BUILDER
+BUILDER -> BUILDER
+deactivate BUILDER
+CTRL -> BUILDER : showAGVBuilder()
+activate BUILDER
+BUILDER -> CTRL : AGVBuilder.toString()
+deactivate BUILDER
+CTRL -> UI
+deactivate CTRL
+UI -> ACT : shows resulting AGV in Builder class & asks for confirmation to save it to the database
+deactivate UI
+
+ACT -> UI : confirms action
+activate UI
+UI -> CTRL : saveAGV()
+activate CTRL
+CTRL -> BUILDER : build()
+activate BUILDER
+BUILDER -> CTRL : AGV
+deactivate BUILDER
+CTRL -> AREPO : save(agv)
+activate AREPO
+AREPO -> CTRL : AGV
+deactivate AREPO
+CTRL -> UI : AGV
+deactivate CTRL
+UI -> ACT : shows final AGV instance created and informs of operation's success
+deactivate UI
+deactivate ACT
+
+
+@enduml

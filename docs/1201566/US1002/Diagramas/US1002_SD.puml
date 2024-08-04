@@ -1,0 +1,45 @@
+@startuml
+autonumber
+actor "SalesClerk" as SC
+
+participant  "CheckProductCatalogUI <presentation>" as SYS
+participant ":CheckProductCatalogController <application>" as CTRL
+participant ":CheckProductCatalogService" as SV
+participant ":ProductRepository" as PR
+
+
+note over SC: the methods used are different depending on the filtering methods used, this SD is for the categories.
+activate SC
+activate SYS
+
+SC-> SYS: Register Category Option Selected
+
+SYS-> SC: asks filtering and sorting mode
+SC-> SYS: introduces filtering and sorting mode
+
+
+
+
+
+
+
+SYS-> CTRL : allProductsWithCategory(categoryName,name)
+deactivate SYS
+activate CTRL
+CTRL -> SV : allProductsWithCategory(categoryName,num)
+deactivate CTRL
+activate SV
+SV-> PR:findProductsWithCategory(category,num)
+deactivate SV
+activate PR
+PR -> PR : createSortMode(int num)
+activate SYS
+SYS -> SC :shows products 
+SC-> SYS : chooses product
+SYS-> SC : product.toString()
+
+
+
+
+
+@enduml

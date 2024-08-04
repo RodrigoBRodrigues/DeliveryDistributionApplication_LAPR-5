@@ -1,0 +1,78 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class "CheckCustomerOpenOrdersUI" as UI {
+  +run()
+}
+
+class "CheckCustomerOpenOrdersController" as CTRL {
+  +getCustomerList()
+  +getListProductOrders
+  +checkCustomerHasProductOrders(Customer,Iterable<ProductOrder>)
+}
+
+class "PersistenceContext" as PCON {
+  -Logger LOGGER
+  -RepositoryFactory theFactory
+  +repositories()
+}
+
+class "Order" as ORDER {
+  -int id
+  -Date date
+  -int customer id
+  -Address billingAddress
+  -Address deliveryAddress
+  -double totalAmount
+  -String payCode
+  -State state
+}
+
+class "OrderRepository" as ORDERREPO {
+
+}
+
+class "Customer" as CUST {
+  -Name name;
+  -Vat vat;
+  -Date dateOfBirth;
+  -PhoneNumber phoneNumber;
+  -Address address;
+}
+
+class "CustomerRepository" as CUSTREPO {
+  +getCustomerList()
+}
+
+
+class "RepositoryFactory" as REPOFAC {
+  +getCustomerRepo()
+  +getOrderRepo()
+  +getProductRepo()
+
+}
+
+
+
+
+UI ..> CTRL
+
+CTRL "1" --> "1" PCON : uses
+CTRL "1" --> CUST : uses
+CTRL "1" --> ORDER : uses
+
+PCON "1" --> "1" REPOFAC : creates
+
+REPOFAC "1" --> "1" CUSTREPO : stores
+REPOFAC "1" --> "1" ORDERREPO : stores
+
+ORDERREPO "1" --> "*" ORDER : stores
+CUSTREPO "1" --> "*" CUST : stores
+
+
+
+
+
+
+
+@enduml

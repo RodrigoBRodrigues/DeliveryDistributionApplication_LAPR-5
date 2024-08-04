@@ -1,0 +1,32 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Class "TcpServerAGVDigitalTwin"{
++parsing methods...
++building data transferece methods...
+}
+
+Class "TcpServerAGVDigitalTwinThread"{
+       
+}
+
+Class "TcpServerAGVManager"{
++parsing methods...
++building data transferece methods...
+}
+
+Class "TcpServerAGVManagerThread"{
+
+}
+
+
+
+
+
+
+"TcpServerAGVDigitalTwinThread"  -->  "TcpServerAGVDigitalTwin"
+
+"TcpServerAGVManager"  -->  "TcpServerAGVManagerThread"
+
+"TcpServerAGVDigitalTwinThread" --> "TcpServerAGVManagerThread"
+@enduml

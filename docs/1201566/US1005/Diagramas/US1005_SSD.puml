@@ -1,0 +1,37 @@
+@startuml
+autonumber
+actor "Sales Clerk" as MEDLT
+
+activate MEDLT
+MEDLT-> ":System" : wants to register a new category
+
+activate ":System"
+":System" --> MEDLT : asks alphanumeric code
+
+deactivate ":System"
+
+
+MEDLT-> ":System" : introduces alphanumeric code
+
+activate ":System"
+
+":System" -> MEDLT : asks description
+deactivate ":System"
+
+
+
+
+MEDLT -> ":System" : introduces description
+activate ":System"
+":System" -> MEDLT : asks name
+deactivate ":System"
+
+
+
+MEDLT -> ":System" : introduces name
+activate ":System"
+":System" -> MEDLT : registers category
+deactivate ":System"
+
+deactivate ":System"
+@enduml

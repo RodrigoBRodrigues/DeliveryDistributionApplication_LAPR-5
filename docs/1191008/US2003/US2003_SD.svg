@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="922px" preserveAspectRatio="none" style="width:1916px;height:922px;" version="1.1" viewBox="0 0 1916 922" width="1916px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fntt01nmjmxln" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="718.3281" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="75.5" y="97.6094" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="121.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="450.5" y="119.9609" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="121.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="450.5" y="271.3672" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="393.1641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="450.5" y="422.7734" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="150.3125" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="301.7188" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="453.125" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="543.8281" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="634.5313" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="725.2344" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="939" y="180.6641" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="939" y="574.1797" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1068" y="332.0703" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1068" y="755.5859" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1643" y="664.8828" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1875.5" y="483.4766" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="80" x2="80" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="455.5" x2="455.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="728.5" x2="728.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="943.5" x2="943.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1072.5" x2="1072.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1211.5" x2="1211.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1395.5" x2="1395.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1551.5" x2="1551.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1647.5" x2="1647.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1770.5" x2="1770.5" y1="87.6094" y2="833.9375" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1880.5" x2="1880.5" y1="87.6094" y2="833.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="8" y="84.5332">Warehouse Employee</text>
+        <ellipse cx="80.5" cy="13" fill="#FEFECE" filter="url(#fntt01nmjmxln)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M80.5,21 L80.5,48 M67.5,29 L93.5,29 M80.5,48 L67.5,63 M80.5,48 L93.5,63 " fill="none" filter="url(#fntt01nmjmxln)" style="stroke: #A80036; stroke-width: 2.0;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="8" y="847.4707">Warehouse Employee</text>
+        <ellipse cx="80.5" cy="860.5469" fill="#FEFECE" filter="url(#fntt01nmjmxln)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M80.5,868.5469 L80.5,895.5469 M67.5,876.5469 L93.5,876.5469 M80.5,895.5469 L67.5,910.5469 M80.5,895.5469 L93.5,910.5469 " fill="none" filter="url(#fntt01nmjmxln)" style="stroke: #A80036; stroke-width: 2.0;" />
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="234" x="336.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="220" x="343.5" y="72.5332">UpdateOrderStateToBePreparedUI</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="234" x="336.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="220" x="343.5" y="854.4707">UpdateOrderStateToBePreparedUI</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="284" x="584.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="270" x="591.5" y="72.5332">UpdateOrderStateToBePreparedController</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="284" x="584.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="270" x="591.5" y="854.4707">UpdateOrderStateToBePreparedController</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="882.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="889.5" y="72.5332">OrderRepository</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="882.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="889.5" y="854.4707">OrderRepository</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="111" x="1015.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="97" x="1022.5" y="72.5332">AGVRepository</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="111" x="1015.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="97" x="1022.5" y="854.4707">AGVRepository</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="139" x="1140.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="125" x="1147.5" y="72.5332">rProd:ProductOrder</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="139" x="1140.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="125" x="1147.5" y="854.4707">rProd:ProductOrder</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="200" x="1293.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="186" x="1300.5" y="72.5332">lProd:Iterable&lt;ProductOrder&gt;</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="200" x="1293.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="186" x="1300.5" y="854.4707">lProd:Iterable&lt;ProductOrder&gt;</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="84" x="1507.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="1514.5" y="72.5332">OrderState</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="84" x="1507.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="1514.5" y="854.4707">OrderState</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="81" x="1605.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="1612.5" y="72.5332">rAGV:AGV</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="81" x="1605.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="1612.5" y="854.4707">rAGV:AGV</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="137" x="1700.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="123" x="1707.5" y="72.5332">lAgv:Iterable&lt;AGV&gt;</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="137" x="1700.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="123" x="1707.5" y="854.4707">lAgv:Iterable&lt;AGV&gt;</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="1851.5" y="51" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="1858.5" y="72.5332">PROD</text>
+        <rect fill="#FEFECE" filter="url(#fntt01nmjmxln)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="1851.5" y="832.9375" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="1858.5" y="854.4707">PROD</text>
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="718.3281" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="75.5" y="97.6094" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="121.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="450.5" y="119.9609" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="121.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="450.5" y="271.3672" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="393.1641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="450.5" y="422.7734" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="150.3125" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="301.7188" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="453.125" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="543.8281" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="634.5313" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="723.5" y="725.2344" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="939" y="180.6641" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="939" y="574.1797" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1068" y="332.0703" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1068" y="755.5859" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1643" y="664.8828" />
+        <rect fill="#FFFFFF" filter="url(#fntt01nmjmxln)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1875.5" y="483.4766" />
+        <polygon fill="#A80036" points="438.5,115.9609,448.5,119.9609,438.5,123.9609,442.5,119.9609" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="85.5" x2="444.5" y1="119.9609" y2="119.9609" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="90" x="92.5" y="115.1045">starts operation</text>
+        <polygon fill="#A80036" points="711.5,146.3125,721.5,150.3125,711.5,154.3125,715.5,150.3125" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="460.5" x2="717.5" y1="150.3125" y2="150.3125" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="467.5" y="145.4561">lProd = getListProductOrders()</text>
+        <polygon fill="#A80036" points="927,176.6641,937,180.6641,927,184.6641,931,180.6641" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="733.5" x2="933" y1="180.6641" y2="180.6641" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="740.5" y="175.8076">findByState(OrderState)</text>
+        <polygon fill="#A80036" points="96.5,237.0156,86.5,241.0156,96.5,245.0156,92.5,241.0156" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="90.5" x2="454.5" y1="241.0156" y2="241.0156" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="341" x="102.5" y="236.1592">shows list of product orders in "TO_BE_PREPARED" state</text>
+        <polygon fill="#A80036" points="438.5,267.3672,448.5,271.3672,438.5,275.3672,442.5,271.3672" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="85.5" x2="444.5" y1="271.3672" y2="271.3672" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="67" x="92.5" y="266.5107">selects one</text>
+        <polygon fill="#A80036" points="711.5,297.7188,721.5,301.7188,711.5,305.7188,715.5,301.7188" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="460.5" x2="717.5" y1="301.7188" y2="301.7188" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="75" x="467.5" y="296.8623">getListAGV()</text>
+        <polygon fill="#A80036" points="1056,328.0703,1066,332.0703,1056,336.0703,1060,332.0703" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="733.5" x2="1062" y1="332.0703" y2="332.0703" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="740.5" y="327.2139">findAll()</text>
+        <polygon fill="#A80036" points="96.5,388.4219,86.5,392.4219,96.5,396.4219,92.5,392.4219" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="90.5" x2="454.5" y1="392.4219" y2="392.4219" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="164" x="102.5" y="387.5654">shows list of available AGVs</text>
+        <polygon fill="#A80036" points="438.5,418.7734,448.5,422.7734,438.5,426.7734,442.5,422.7734" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="85.5" x2="444.5" y1="422.7734" y2="422.7734" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="67" x="92.5" y="417.917">selects one</text>
+        <polygon fill="#A80036" points="711.5,449.125,721.5,453.125,711.5,457.125,715.5,453.125" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="460.5" x2="717.5" y1="453.125" y2="453.125" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="188" x="467.5" y="448.2686">rProd = updateOrderState(rProd)</text>
+        <polygon fill="#A80036" points="1863.5,479.4766,1873.5,483.4766,1863.5,487.4766,1867.5,483.4766" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="733.5" x2="1869.5" y1="483.4766" y2="483.4766" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="740.5" y="478.6201">setOrderState(OrderState)</text>
+        <polygon fill="#A80036" points="711.5,539.8281,721.5,543.8281,711.5,547.8281,715.5,543.8281" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="460.5" x2="717.5" y1="543.8281" y2="543.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="467.5" y="538.9717">save(rProd)</text>
+        <polygon fill="#A80036" points="927,570.1797,937,574.1797,927,578.1797,931,574.1797" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="733.5" x2="933" y1="574.1797" y2="574.1797" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="740.5" y="569.3232">save(rProd)</text>
+        <polygon fill="#A80036" points="711.5,630.5313,721.5,634.5313,711.5,638.5313,715.5,634.5313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="460.5" x2="717.5" y1="634.5313" y2="634.5313" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="194" x="467.5" y="629.6748">assignProductOrder(rProd, rAGV)</text>
+        <polygon fill="#A80036" points="1631,660.8828,1641,664.8828,1631,668.8828,1635,664.8828" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="733.5" x2="1637" y1="664.8828" y2="664.8828" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="205" x="740.5" y="660.0264">addProductOrderWithPriority(rProd)</text>
+        <polygon fill="#A80036" points="711.5,721.2344,721.5,725.2344,711.5,729.2344,715.5,725.2344" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="460.5" x2="717.5" y1="725.2344" y2="725.2344" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="467.5" y="720.3779">save(rAGV)</text>
+        <polygon fill="#A80036" points="1056,751.5859,1066,755.5859,1056,759.5859,1060,755.5859" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="733.5" x2="1062" y1="755.5859" y2="755.5859" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="740.5" y="750.7295">save(rAGV)</text>
+        <polygon fill="#A80036" points="91.5,811.9375,81.5,815.9375,91.5,819.9375,87.5,815.9375" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="85.5" x2="454.5" y1="815.9375" y2="815.9375" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="175" x="97.5" y="811.0811">informs of operation's success</text>
+        <!--
+@startuml
+
+actor "Warehouse Employee" as ACT
+
+participant "UpdateOrderStateToBePreparedUI" as UI
+participant "UpdateOrderStateToBePreparedController" as CTRL
+
+participant "OrderRepository" as OREPO
+participant "AGVRepository" as AREPO
+
+participant "rProd:ProductOrder" as ORDER
+participant "lProd:Iterable<ProductOrder>" as IORDER
+participant "OrderState" as STATE
+
+participant "rAGV:AGV" as AGV
+participant "lAgv:Iterable<AGV>" as IAGV
+
+activate ACT
+ACT -> UI : starts operation
+activate UI
+UI -> CTRL : lProd = getListProductOrders()
+activate CTRL
+CTRL -> OREPO : findByState(OrderState)
+activate OREPO
+deactivate OREPO
+deactivate CTRL
+UI - -> ACT : shows list of product orders in "TO_BE_PREPARED" state
+deactivate UI
+
+ACT -> UI : selects one
+activate UI
+UI -> CTRL : getListAGV()
+activate CTRL
+CTRL -> AREPO : findAll()
+activate AREPO
+deactivate AREPO
+deactivate CTRL
+UI - -> ACT : shows list of available AGVs
+deactivate UI
+
+ACT -> UI : selects one
+activate UI
+UI -> CTRL : rProd = updateOrderState(rProd)
+activate CTRL
+CTRL -> PROD : setOrderState(OrderState)
+activate PROD
+deactivate PROD
+deactivate CTRL
+UI -> CTRL : save(rProd)
+activate CTRL
+CTRL -> OREPO : save(rProd)
+activate OREPO
+deactivate OREPO
+deactivate CTRL
+UI -> CTRL : assignProductOrder(rProd, rAGV)
+activate CTRL
+CTRL -> AGV : addProductOrderWithPriority(rProd)
+activate AGV
+deactivate AGV
+deactivate CTRL
+UI -> CTRL : save(rAGV)
+activate CTRL
+CTRL -> AREPO : save(rAGV)
+activate AREPO
+deactivate AREPO
+deactivate CTRL
+UI - -> ACT : informs of operation's success
+deactivate UI
+deactivate ACT
+
+
+@enduml
+
+PlantUML version 1.2018.14(Fri Dec 21 16:33:16 GMT 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_221-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

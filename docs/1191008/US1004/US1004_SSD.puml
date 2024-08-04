@@ -1,0 +1,34 @@
+@startuml
+autonumber
+
+actor "Sales Clerk" as ACT
+participant "System" as SYS
+
+activate ACT
+ACT -> SYS : starts creation process
+activate SYS
+SYS -> ACT : lists all clients to chose from
+deactivate SYS
+ACT -> SYS : selects one
+
+loop
+activate SYS
+SYS -> ACT : presents list of products
+deactivate SYS
+ACT -> SYS : selects one
+activate SYS
+SYS -> ACT : asks for quantity
+deactivate SYS
+ACT -> SYS : submits quantity desired
+activate SYS
+end loop
+
+SYS -> ACT : shows end result and asks for confirmation
+deactivate SYS
+ACT -> SYS : confirms submission
+activate SYS
+SYS -> ACT : saves resulting products productOrder & informs of successful operation
+deactivate SYS
+deactivate ACT
+
+@enduml

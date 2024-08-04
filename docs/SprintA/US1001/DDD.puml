@@ -1,0 +1,202 @@
+@startuml
+hide methods
+
+package SystemUser <<rectangle>>{
+class SystemUser << (E,#FFFFFF) >> << root >>
+class Password << (V,#FFFFFF) >> 
+class Email<< (V,#FFFFFF) >> 
+SystemUser "1" --> "1" Password
+SystemUser "1" --> "1" Email
+}
+
+package WarehouseEmployee <<rectangle>>{
+
+class WarehouseEmployee << (E,#FFFFFF) >> <<Root>>
+
+}
+
+class Role << (I,#AAAAAA) >> << Interface >>
+
+
+
+package SalesClerk <<rectangle>>{
+
+class SalesClerk << (E,#FFFFFF) >> <<Root>>
+
+}
+
+package SalesManager <<rectangle>>{
+
+class SalesManager << (E,#FFFFFF) >> <<Root>>
+
+}
+
+package Administrator <<rectangle>>{
+
+class Administrator << (E,#FFFFFF) >> <<Root>>{
+}
+
+}
+
+package "Shopping Cart" <<rectangle>>{
+
+class "Shopping Cart" << (E,#FFFFFF) >> << Root >>
+class "ShoppingCartLine" << (V,#FFFFFF) >>
+
+"Shopping Cart" "1" --> "1..*" ShoppingCartLine
+
+}
+
+
+
+package Customer <<rectangle>>{
+
+class Customer << (E,#FFFFFF) >> <<Root>>
+
+class "Purchase History" << (E,#FFFFFF) >>
+
+class Address << (V,#FFFFFF) >>
+class Name << (V,#FFFFFF) >>
+class VatID << (V,#FFFFFF) >>
+class PhoneNumber << (V,#FFFFFF) >>
+class AddressType << (E,#FFFFFF) >> << Enum >>
+
+    Customer "1" --> "1" "Purchase History"
+
+    Customer "1" *-- "0..*" Address
+    AddressType "1" <-u- "0..*" Address: billing or delivery
+
+    Customer "1" --> "1" Name
+    Customer "1" --> "0..1" LocalDate :dateOfBirth
+    Customer "1" --> "1" PhoneNumber
+    Customer "1" --> "1" VatID
+
+}
+
+package Warehouse <<rectangle>>{
+
+class Warehouse << (V,#FFFFFF) >> <<Root>>
+}
+
+
+
+
+
+
+package AGV <<rectangle>>{
+class AGV << (E,#FFFFFF) >>
+class AGVState << (V,#FFFFFF) >>
+class DockingPoint << (V,#FFFFFF) >>
+
+
+class AGVModel << (V,#FFFFFF) >>
+
+AGV "1" --> "1" AGVState
+AGV "0..*" --> "1" AGVModel
+AGV "1" --> "1" DockingPoint
+
+}
+
+package Survey <<rectangle>>{
+
+class Survey << (E,#FFFFFF) >> <<Root>> {
+-grammar
+}
+class Questionnaire << (V,#FFFFFF) >>
+}
+
+
+
+
+
+
+
+
+Survey "1" --> "1" Questionnaire
+
+
+
+
+package Order <<rectangle>>{
+
+    class Order << (E,#FFFFFF) >> <<Root>>
+
+    class OrderLine << (V,#FFFFFF) >>
+
+    class Payment << (V,#AAAAAA) >>
+
+    class Shipment << (V,#AAAAAA) >>
+
+    class "Order State" << (V,#AAAAAA) >>
+
+
+    Order "1" --> "1" Payment
+    Order "1" --> "1" Shipment
+    Order "1" --> "1..*" OrderLine
+    Order "1" --> "1" "Order State"
+}
+
+package Product <<rectangle>>{
+
+    class Product << (E,#FFFFFF) >> <<Root>>
+
+    class Description<< (V,#AAAAAA) >>
+    class Brand << (V,#AAAAAA) >>
+    class Photo << (V,#AAAAAA) >>
+    class Reference << (V,#AAAAAA) >>
+    class Barcode << (V,#AAAAAA) >>
+    class "Production Code" << (V,#AAAAAA) >>
+    class Price << (V,#AAAAAA) >>
+    class "Storage Area" << (V,#FFFFFF) >>
+
+
+    Product --> "1" Description
+    Product --> "1" Brand
+    Product --> "0..*" Photo
+    Product --> "1" Reference
+    Product --> "1" Barcode
+    Product --> "1" "Production Code"
+    Product --> "1..*" Price
+    Product --> "1" "Storage Area"
+
+}
+
+package "Product Category" <<Rectangle>>{
+
+    class "Product Category" << (E,#FFFFFF) >> <<Root>>
+    class "Alphanumeric code" << (V,#FFFFFF) >>
+
+    "Product Category" --> "Alphanumeric code"
+}
+
+
+
+
+
+
+
+"Product Category" "1" --> "0..*" Product : caracterizes
+SystemUser "1" --|> "0..1" Customer
+SystemUser "1" --|> "0..1" WarehouseEmployee
+SystemUser "1" --|> "0..1" SalesClerk
+SystemUser "1" --|> "0..1" Administrator
+SystemUser "1" --|> "0..1" SalesManager
+
+SalesManager "1" --> "1..*" Survey :can carry out
+SalesManager "1" --> "1..*" "Product Category" :manage information related to
+SalesClerk "1" --> "1..*" "Product Category" :manage information related to
+SalesClerk"1" --> "1..*" "Customer" :can register
+Customer "1" --> "0..*" Survey : takes part in
+Customer "1" -r-> "0..*" Order: create or follow status
+Customer "1" --> "1" "Shopping Cart" : has associated to him
+SalesClerk "1" --> "1..*" "Order" :can register
+SalesManager "1" --> "1..*" "Customer" :can register
+WarehouseEmployee "1" --> "1..*" "Warehouse" :works
+Administrator "1" --> "1..*" "Role" :manages
+Role "1" --> "1..*" SystemUser :caracterizes the permissions of
+Order "*" --> "1" Warehouse: when state is "to be prepared"
+Warehouse "1" --> "1..*" Product: stores
+AGV "1" --> "1" Product: transports to AGV's docking point
+Warehouse "1" --> "0..1" AGV: houses
+
+@enduml

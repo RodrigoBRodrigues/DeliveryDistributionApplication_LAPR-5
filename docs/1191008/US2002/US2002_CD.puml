@@ -1,0 +1,85 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class "CreateAGVUI" as UI {
+  +run()
+}
+
+class "CreateAVGController" as CTRL {
+  +createAGV(autonomy, capacity, weight, volume, shortDescription)
+}
+
+class "WarehouseInfo" as WI {
+  +getAGVDocks()
+}
+
+class "AGV" as AGV{
+  -autonomy
+  -capacity
+  -weight
+  -volume
+  -shortDescription
+  -dockingPoint
+
+}
+
+enum "AGVState" as AGVSTATE {
+
+}
+
+class "AGVDocks" as DOCK {
+  +id
+}
+
+
+
+class "PersistenceContext" as PCON {
+  -Logger LOGGER
+  -RepositoryFactory theFactory
+  +repositories()
+}
+
+class "RepositoryFactory" as REPOFAC {
+  +agvs()
+}
+
+
+class "AGVRepository" as AREPO {
+
+}
+
+
+class "dockingPoint" as DP {
+
+}
+
+class "AGVBuilder" as BUILDER {
+
+}
+
+
+UI ..> CTRL
+UI ..> WI
+
+CTRL "1" --> "1" PCON : uses
+CTRL "1" --> "*" AGV : creates
+CTRL "1" --> "1" AREPO
+CTRL "1" --> "1" BUILDER : uses
+
+BUILDER "1" --> "*" AGV : builds
+
+PCON "1" --> "1" REPOFAC : creates
+REPOFAC "1" --> "1" AREPO : stores
+
+AREPO "1" --> "*" AGV : stores
+
+AGV "1" --> "1" AGVSTATE : contains
+AGV "1" --> "1" AGVModel : contains
+AGV "1" --> "1" DP : contains
+
+WI "1" --> "*" DOCK : stores
+
+DOCK "1" -> "1" DP : converts into
+
+
+@enduml

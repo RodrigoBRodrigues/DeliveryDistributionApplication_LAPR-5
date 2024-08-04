@@ -1,0 +1,81 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Class "RegisterNewCategoryUI"{
+doShow()
+headline()
+}
+
+Class "RegisterNewCategoryController"{
++registerCategory(alphanumericCode,description,name)
+}
+
+Class "AlphaNumericCode"{
+-String code
+
+
++AlphaNumericCode(String code)
++equals(Object o)
++hashCode()
++toString()
+}
+
+Class "Description"{
+-String description
++ValueOf(String description)
++equals(Object o)
++hashCode()
++toString()
+}
+Class "RepositoryFactory"{
++categories()
+}
+Class "Designation"{
+-String description
++ValueOf(String designation)
++equals(Object o)
++hashCode()
++toString()
+}
+
+
+class PersistenceContext {
+-Logger LOGGER
+-RepositoryFactory theFactory
++repositories()
+}
+
+
+class CategoryRepository{
++save(Category)
+}
+
+class Category{
++Category(alphanumericCode,description,name)
++equals(Object o)
++hashcode()
++identity()
++toString()
+}
+
+
+RegisterNewCategoryUI..> RegisterNewCategoryController
+
+
+AlphaNumericCode "1" <-- "1" Category : contains
+Description "1" <-- "1" Category : contains
+Designation "1" <-- "1" Category : contains
+
+
+"RegisterNewCategoryController" "1" --> "1" "PersistenceContext" :creates
+
+
+"PersistenceContext" "1" --> "1" "RepositoryFactory" :creates
+
+
+"RepositoryFactory" "1" --> "1" "CategoryRepository"  :creates
+
+"CategoryRepository" "1" --> "1..*" "Category" :saves
+
+
+@enduml

@@ -1,0 +1,221 @@
+@startuml
+autonumber
+actor "Sales Manager" as MEDLT
+participant ":DefineSurveyUI" as SYS
+participant "Survey Controller" as CTRL
+participant ":QuestionDTO" as QDTO
+participant ":QuestionDTOParser" as QDTOP
+participant ":SectionDTO" as SDTO
+participant ":SectionDTOParser" as SDTOP
+participant ":QuestionnaireDTO" as QTDTO
+participant ":QuestionnaireDTOParser" as QTDTOP
+participant ":SurveyDTO" as SURDTO
+participant ":SurveyDTOParser" as SURDTOP
+participant "Content" as CONTENT
+participant "Survey" as SUR
+participant "Question" as QUESTION
+participant "Section" as SECTION
+participant "Questionnaire" as QUESTIONNAIRE
+participant ":PersistenceContext<persistence>" as PC
+participant ":RepositoryFactory<factory>" as RF
+participant ":SurveyRepository" as CR
+
+
+
+activate MEDLT
+MEDLT-> SYS : Define new Survey
+
+activate SYS
+SYS --> MEDLT : Asks to select between inputting or importing txt
+
+deactivate SYS
+
+alt
+MEDLT-> SYS : selects inputting all the information
+activate SYS
+
+SYS-> SYS :inputData()
+
+SYS -> MEDLT : asks survey related information
+
+
+MEDLT-> SYS : inserts survey related information
+
+SYS-> SYS :insertSurveyData()
+
+SYS -> MEDLT : asks questionnaire related information
+
+MEDLT-> SYS : inserts questionnaire related information
+
+SYS-> SYS :insertQuestionnaireData()
+
+loop while doesn't want to define more sections
+
+SYS -> MEDLT : asks section related information
+
+MEDLT-> SYS : inserts section related information
+
+SYS-> SYS :insertSectionsData()
+
+loop while doesn't want to define more questions
+SYS -> MEDLT : asks question related information
+
+MEDLT-> SYS : inserts question related information
+
+SYS-> SYS :insertQuestionsData()
+
+SYS-> QDTO**: questionDto=create(questionId, questionMessage, instruction, questionType, obligatoriness, extraInfo)
+
+
+SYS-> CTRL : buildQuestions(questionDto)
+activate CTRL
+
+CTRL -> QDTOP**: create().valueOf(questionDto)
+activate QDTOP
+QDTOP-> QUESTION**: create().valueOf(questionDto)
+deactivate QDTOP
+
+activate QUESTION
+QUESTION-> CTRL: question
+deactivate QUESTION
+CTRL-> CTRL: questions.add(question)
+end loop
+deactivate CTRL
+SYS-> SDTO**: sectionDto=create(sectionId, sectionTitle, descriptionString, obligatoriness, repeatability)
+
+SYS-> CTRL : buildSections(sectionDto)
+activate CTRL
+CTRL -> SDTOP**: create().valueOf(sectionDto)
+activate SDTOP
+SDTOP-> SECTION**: create().valueOf(questionDto)
+deactivate SDTOP
+
+activate SECTION
+SECTION-> CTRL: section
+deactivate SECTION
+
+CTRL-> CTRL: sections.add(section)
+CTRL -> CTRL: cleanQuestionList()
+
+
+end loop
+deactivate CTRL
+
+SYS-> QTDTO**: questionnaireDto=create(questionnaireId, questionnaireTitle, welcomeMessage, finalMessage)
+
+SYS -> CTRL : buildQuestionnaire(questionnaireDto)
+activate CTRL
+
+
+CTRL -> QTDTOP**: create().valueOf(questionnaireDto)
+
+QTDTOP-> QUESTIONNAIRE**: create().valueOf(questionnaireDto)
+
+
+SYS-> SURDTO**: surveyDto=create(alphanumericCode, descriptionString, period)
+SYS -> CTRL : buildSurvey(surveyDto, flag)
+CTRL -> SURDTOP**: create().valueOf(surveyDto)
+activate SURDTOP
+SURDTOP-> SUR**: create().valueOf(surveyDto)
+deactivate SURDTOP
+
+activate SUR
+SUR-> CTRL: survey
+
+CTRL -> CONTENT**: create(questionnaire)
+activate CONTENT
+CONTENT -> CTRL: content
+deactivate CONTENT
+CTRL-> SUR: addContent(content)
+deactivate SUR
+
+CTRL-> PC**: repositories()
+activate PC
+PC-> RF**: create
+PC-> CTRL: factory
+deactivate PC
+
+CTRL-> RF: surveys()
+activate RF
+RF->CR**: create
+
+RF->CTRL: surveyRepository
+deactivate RF
+
+CTRL->CR: save(survey)
+activate CR
+
+CTRL->SYS:surveyString
+deactivate CR
+deactivate CTRL
+
+deactivate PC
+
+
+
+SYS -> MEDLT : presents the survey created
+deactivate SYS
+
+end alt
+
+alt
+MEDLT-> SYS : selects to import a file
+
+SYS -> MEDLT : asks survey related information
+
+MEDLT-> SYS : inserts Alphanumeric code, Description, Period, Rules
+
+SYS -> MEDLT : asks the path of the file
+
+MEDLT-> SYS : inserts the path of the file
+
+activate SYS
+
+SYS-> SURDTO**: surveyDto=create(alphanumericCode, descriptionString, period)
+
+SYS -> CTRL : buildSurvey(surveyDto, flag)
+activate CTRL
+
+CTRL -> SURDTOP**: create().valueOf(surveyDto)
+activate SURDTOP
+SURDTOP-> SUR**: create().valueOf(surveyDto)
+deactivate SURDTOP
+
+activate SUR
+SUR-> CTRL: survey
+
+CTRL -> CONTENT**: create(questionnaire)
+activate CONTENT
+CONTENT -> CTRL: content
+deactivate CONTENT
+CTRL-> SUR: addContent(content)
+deactivate SUR
+
+CTRL-> PC**: repositories()
+activate PC
+PC-> RF**: create
+PC-> CTRL: factory
+deactivate PC
+
+CTRL-> RF: surveys()
+activate RF
+RF->CR**: create
+
+RF->CTRL: surveyRepository
+deactivate RF
+
+CTRL->CR: save(survey)
+activate CR
+
+CTRL->SYS: surveyString
+deactivate CR
+deactivate CTRL
+
+deactivate PC
+
+end alt
+
+deactivate CTRL
+SYS -> MEDLT : presents the survey created
+deactivate SYS
+@enduml

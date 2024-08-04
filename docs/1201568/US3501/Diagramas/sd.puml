@@ -1,0 +1,124 @@
+@startuml
+autonumber
+actor "Customer" as MEDLT
+participant ":AnswerToSurveyUI" as SYS
+participant "Survey Controller" as CTRL
+participant ":LabeledExprLexer" as EXPR
+participant ":EvalVisitor" as EVAL
+participant ":QuestionDTOParser" as QDTOP
+participant ":SectionDTO" as SDTO
+participant ":SectionDTOParser" as SDTOP
+participant ":QuestionnaireDTO" as QTDTO
+participant ":QuestionnaireDTOParser" as QTDTOP
+participant ":SurveyDTO" as SURDTO
+participant ":SurveyDTOParser" as SURDTOP
+participant "Content" as CONTENT
+participant "Survey" as SUR
+participant "Question" as QUESTION
+participant "Section" as SECTION
+participant "Questionnaire" as QUESTIONNAIRE
+participant ":PersistenceContext<persistence>" as PC
+participant ":RepositoryFactory<factory>" as RF
+participant ":SurveyRepository" as CR
+
+
+
+activate MEDLT
+MEDLT-> SYS : Answer to Survey
+
+activate SYS
+SYS-> CTRL : findSurveysByCustomer()
+
+activate CTRL
+CTRL -> SYS: surveys
+deactivate CTRL
+
+SYS --> MEDLT : Show list of Survey to answer
+
+deactivate SYS
+
+
+
+MEDLT-> SYS : selects survey to be answered
+
+activate SYS
+SYS-> CTRL :survey =  surveyToBeAnswered()
+
+
+
+SYS-> EXPR** : create(survey.content())
+deactivate SYS
+
+loop for each question in the survey
+
+activate EXPR
+EXPR->EVAL : visitSection()
+
+activate EVAL
+deactivate EVAL
+
+EXPR->EVAL : visitQuestion()
+activate EVAL
+deactivate EVAL
+EXPR->EVAL : treatObligatoriness()
+activate EVAL
+deactivate EVAL
+EXPR->EVAL : treatQuestionType()
+activate EVAL
+deactivate EVAL
+
+EXPR->CTRL : question
+deactivate EXPR
+
+
+activate CTRL
+
+
+CTRL->SYS : show question
+deactivate CTRL
+activate SYS
+
+MEDLT-> SYS : answers Question
+end loop
+
+SYS -> CTRL : setAnswers()
+
+SYS -> CTRL : saveSurvey()
+
+
+
+activate CTRL
+
+
+CTRL-> PC**: repositories()
+activate PC
+PC-> RF**: create
+PC-> CTRL: factory
+deactivate PC
+
+CTRL-> RF: surveys()
+activate RF
+RF->CR**: create
+
+RF->CTRL: surveyRepository
+deactivate RF
+
+CTRL->CR: save(survey)
+activate CR
+
+CTRL->SYS:surveyString
+deactivate CR
+deactivate CTRL
+
+deactivate PC
+
+
+
+
+
+
+
+deactivate CTRL
+SYS -> MEDLT : presents the survey created
+deactivate SYS
+@enduml

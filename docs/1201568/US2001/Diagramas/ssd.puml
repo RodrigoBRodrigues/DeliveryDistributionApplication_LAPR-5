@@ -1,0 +1,21 @@
+@startuml
+autonumber
+actor "Warehouse Employee" as MEDLT
+
+activate MEDLT
+MEDLT-> ":System" : Set up warehouse plant
+
+activate ":System"
+":System" --> MEDLT : asks the name of the file
+
+deactivate ":System"
+
+
+MEDLT-> ":System" : introduces file name
+
+activate ":System"
+
+":System" -> MEDLT : presents the user with the plant
+deactivate ":System"
+
+@enduml

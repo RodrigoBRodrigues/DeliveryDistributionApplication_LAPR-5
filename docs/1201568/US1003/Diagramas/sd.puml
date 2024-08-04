@@ -1,0 +1,77 @@
+@startuml
+autonumber
+actor "SalesClerk" as SC
+
+participant  "AddUserUI <presentation>" as SYS
+participant ":RegisterCustomerController <application>" as CTRL
+participant ":CustomerBuilder<builder>" as CSB
+participant ":Customer<Domain>" as CUS
+participant ":PersistenceContext<persistence>" as PC
+participant ":RepositoryFactory<factory>" as RF
+participant ":CustomerRepository" as CR
+
+
+
+
+activate SC
+activate SYS
+
+SC-> SYS: Add Customer Option Selected
+SYS-> SC: asks customer's information
+
+SC-> SYS: name, VAT, email
+
+SYS-> SC: asks VAT
+SC-> SYS: introduces VAT
+SYS-> SC: asks email
+SC-> SYS: introduces email
+
+alt
+SYS-> SC: asks customer's optional information
+SC-> SYS: mobile phone number, birthdate, gender, address (billing, shipment)
+
+
+end alt
+
+
+SYS-> CTRL : registerCustomer(name, VAT, email, mobile, phone number, birthdate, gender, address)
+note over CSB: CustomerBuilder cria entidade do tipo Customer num estado válido
+activate CTRL
+CTRL-> CSB **: create
+
+CTRL-> CSB: setName(name)
+
+
+note over CTRL, CSB:Set the  rest of the information
+CTRL-> CSB: build()
+activate CSB
+CSB -> CUS** : createCustomer(name, VAT, email, mobile, phone number, birthdate, gender, address)
+CUS -> CSB: customer
+
+CSB -> CTRL: customer
+deactivate CSB
+
+CTRL-> PC**: repositories()
+activate PC
+PC-> RF**: create
+PC-> CTRL: factory
+deactivate PC
+
+CTRL-> RF: customers()
+activate RF
+RF->CR**: create
+
+RF->CTRL: customerRepository
+deactivate RF
+CTRL->CR: save(customer)
+
+deactivate PC
+activate CR
+
+CTRL -> SYS: confirmation is show to the user
+deactivate CR
+deactivate CTRL
+
+SYS-> SC: confirmation is show to the user
+deactivate SYS
+@enduml

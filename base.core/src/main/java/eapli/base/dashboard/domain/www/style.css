@@ -1,0 +1,184 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ;
+    width: 35%;
+    height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid-item {
+    border: 0.5px solid black;
+    padding: 12px;
+    font-size: 2px;
+    text-align: center;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+}
+.grid-item1 {
+    border: 0.5px solid black;
+    padding: 12px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    width: 2px;
+    height: 2px;
+    background-color: #adabab;
+}
+
+.grid-item3 {
+    border: 0.5px solid black;
+    padding: 12px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    width: 2px;
+    height: 2px;
+    background-color: #ff8b3d;
+}
+
+.grid-item2 {
+    border: 0.5px solid black;
+    padding: 12px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    width: 2px;
+    height: 2px;
+    background-color: #efc225;
+}
+
+* {
+    margin: 0px;
+    padding: -2px;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #ffffff;
+}
+
+.context {
+    width: 100%;
+    position: absolute;
+    top: 6vh;
+}
+
+.context h1 {
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+    margin-top: -5px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #0c4b77;
+}
+
+.topnav a {
+    float: left;
+    color: #dddddd;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.topnav a:hover {
+    background-color: #0c4b77;
+}
+
+.topnav a.active {
+    background-color: #2f8869;
+    color: #ffffff;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.35em;
+    font-family: sans-serif;
+    min-width: 250px;
+
+}
+
+.styled-table thead tr {
+    background-color: #2f8869;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 8px 8px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 0.5px solid #2f8869;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: white;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 15px solid #0c4b77;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #000000;
+    background: #f3f3f3;
+}
+
+.title{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    text-align-all: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+}
+
+.box {
+    /*display: inline-flex;*/
+    flex-wrap: wrap;
+    margin: 0rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.insideBox {
+    margin-top: 3rem;
+    margin-bottom: 4.5rem;
+    margin-left: 0rem;
+    background: #0c4b77;
+    border: 0px solid #2f8869;
+    padding: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.table-wrapper {
+    position: relative;
+}
+
+.table-scroll {
+    height:700px;
+    overflow: auto;
+}
+
+.table-wrapper table {
+    width:100%;
+}
+
+.table-wrapper table thead th .text {
+    position:absolute;
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+}

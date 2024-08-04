@@ -1,0 +1,146 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Class "AddCustomerUI"{
+}
+
+Class "AddCustomerController"{
++customerBuilder(firstName, lastName, vatId, email, prefix,
+ phoneNumber, birthday, gender, addresses)
+}
+
+Class "Name"{
+-String firstName
+-String lastName
+
++Name(String firstName, String lastName)
++valueOf()
++firstName()
++lastName()
++equals(Object o)
++hashCode()
++toString()
+}
+
+Class "Vat"{
+-long vatId
+
++Name(Long vatId)
++valueOf()
++vatId()
++equals(Object o)
++hashCode()
++toString()
+}
+Class "PhoneNumber"{
+     -int prefix
+     -long number
+     +PhoneNumber(int prefix, int number)
+     +valueOf(String prefix, String phoneNumber)
+}
+Class "Customer"{
+     -Name name;
+     -Vat vat;
+     -Date dateOfBirth;
+     -PhoneNumber phoneNumber;
+     -Address address;
+
++Customer(name, vat, email, phoneNumber)
+
++name()
++vat()
++email()
++phoneNumber()
+
++dateOfBirth(LocalDate dateOfBirth)
++gender(Gender gender)
++address(Address address)
+
+}
+
+
+
+class Address {
+-String streetName
+-String postalCode
+-Integer doorNumber
+-String city
+-String country
+-AddressType addressType
+
++Address(streetName, postalCode, doorNumber, city, country)
++valueOf()
++streetName()
++postalCode()
++doorNumber()
++city()
++country()
++addressType()
++equals(Object o)
++hashCode()
++toString()
+
+}
+
+enum AddressType {
++BILLING
++SHIPMENT
+}
+
+
+
+
+class CustomerBuilder {
++CustomerBuilder(final String firstName, final String lastName, final String vatId, final String email
+                     , final String prefix, final String phoneNumber)
++withName(name)
++withVat(vat)
++withEmail(email)
++withBirthday(birthday)
++withGender(gender)
++withAddress(address)
++build()
+}
+
+class PersistenceContext {
+-Logger LOGGER
+-RepositoryFactory theFactory
++repositories()
+}
+
+class RepositoryFactory{
++customers()
+}
+
+class CustomerRepository{
++findById(Long number)
++findByUsername(String name)
+}
+
+
+AddCustomerUI..> AddCustomerController
+AddCustomerController..> Customer
+AddCustomerController..> CustomerBuilder 
+CustomerBuilder "1" --> "*" Customer : builds
+
+Name "1" <-- "1" Customer : contains
+Vat "1" <-- "1" Customer : contains
+PhoneNumber "1" <-- "1" Customer : contains
+LocalDate "1" <-- "1" Customer : birthday
+Email "1" <-- "1" Customer : contains
+Address "1..*" <-- "1" Customer : contains
+AddressType "1" <-- "1" Address: contains
+
+"AddCustomerController" "1" --> "1" "PersistenceContext" :creates
+
+
+"PersistenceContext" "1" --> "1" "RepositoryFactory" :creates
+
+
+"RepositoryFactory" "1" --> "1" "CustomerRepository"  :creates
+
+"AddCustomerController" "1" --> "1..*" "Customer" :saves
+
+"Customer" "1" --> "1" "CustomerRepository" :in
+
+@enduml

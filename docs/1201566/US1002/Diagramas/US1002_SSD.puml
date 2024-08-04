@@ -1,0 +1,32 @@
+@startuml
+autonumber
+actor "Sales Clerk" as MEDLT
+
+activate MEDLT
+MEDLT-> ":System" : wants to check the product catalog
+
+activate ":System"
+":System" --> MEDLT : asks filtering and sorting options
+
+deactivate ":System"
+
+
+MEDLT-> ":System" : introduces filtering and sorting options
+activate ":System"
+
+":System" -> MEDLT : presentes the products
+deactivate ":System"
+
+
+
+loop
+MEDLT -> ":System" : gets more details of the products by choosing them
+activate ":System"
+":System" -> MEDLT : shows the details of the products
+deactivate ":System"
+
+end loop
+
+
+deactivate ":System"
+@enduml

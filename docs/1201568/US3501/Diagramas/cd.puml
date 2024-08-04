@@ -1,0 +1,81 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Class "AnswerToSurveyUI"{
+}
+
+Class "SurveyController"{
+(...)
++surveyToBeAnswered()
++findSurveyByCustomer(customer)
++saveSurvey()
+}
+
+
+class Content {
+-String fullQuestionnaire;
+-StringBuilder stringbuilder
+
++Content(questionnaire)
++Content(fullQuestionnaire)
++buildQuestionnaireSyntax(questionnaire)
++buildSectionSyntax(sections)
++buildQuestionSyntax(question)
++toString()
+
+}
+
+
+
+class Survey{
+-AlphanumericCode alphanumericCode
+-Description description
+-Period period
+-Questionnaire questionnaire
+-Content content
+}
+
+class Answer{
+ - Long id
+ - String answer
+ - String sectionID
+ - String questionID
+ - Customer customer
+}
+
+class PersistenceContext {
+-Logger LOGGER
+-RepositoryFactory theFactory
++repositories()
+}
+
+class RepositoryFactory{
++customers()
+}
+
+class SurveyRepository{
++getQuestionnaireUsingAlphanumericCode(alphaNumericCode);
+
++findSurveyByCustomer(customer);
+}
+
+AnswerToSurveyUI..> "SurveyController"
+
+SurveyController --> Survey
+
+
+"Content" "1" <-u- "1" Survey : contains
+"Answer" "0..*" <-u- "1" Survey : contains
+
+
+"SurveyController" "1" --> "1" "PersistenceContext" :creates
+
+
+"PersistenceContext" "1" --> "1" "RepositoryFactory" :creates
+
+
+"RepositoryFactory" "1" --> "1" "SurveyRepository"  :creates
+
+
+"Survey" "1" --> "1" "SurveyRepository" :in
+@enduml
