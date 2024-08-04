@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "34298cd3-0048-49b7-8158-9594499e398b",
+		"name": "API Camiões",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24063495"
+	},
+	"item": [
+		{
+			"name": "Verificar se existe Camião com Matricula=\"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/camioes/matriculas/AA-00-00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes",
+						"matriculas",
+						"AA-00-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Camião com matricula \"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"     const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.matricula).to.eql(\"AA-00-00\");\r",
+							"    pm.expect(responseJson.caracteristica).to.eql(\"eTruck01\");\r",
+							"    pm.expect(responseJson.tara).to.eql(7500);\r",
+							"    pm.expect(responseJson.capacidade).to.eql(4300);\r",
+							"    pm.expect(responseJson.carga).to.eql(80);\r",
+							"    pm.expect(responseJson.autonomia).to.eql(100);\r",
+							"    pm.expect(responseJson.tempo).to.eql(60);\r",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"matricula\":\"AA-00-00\",\r\n  \"caracteristica\": \"eTruck01\",\r\n  \"tara\": 7500 ,\r\n  \"capacidade\" : 4300 ,\r\n  \"carga\" : 80 ,\r\n  \"autonomia\" : 100 ,\r\n  \"tempo\" : 60 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camioes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Camião com Matricula=\"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"     const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.matricula).to.eql(\"AA-00-00\");\r",
+							"    pm.expect(responseJson.caracteristica).to.eql(\"eTruck01\");\r",
+							"    pm.expect(responseJson.tara).to.eql(7500);\r",
+							"    pm.expect(responseJson.capacidade).to.eql(4300);\r",
+							"    pm.expect(responseJson.carga).to.eql(80);\r",
+							"    pm.expect(responseJson.autonomia).to.eql(100);\r",
+							"    pm.expect(responseJson.tempo).to.eql(60);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/camioes/matriculas/AA-00-00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes",
+						"matriculas",
+						"AA-00-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar a caracteristica do camião com matricula = \"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Put feito com sucesso\", function () {\r",
+							"     const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.matricula).to.eql(\"AA-00-00\");\r",
+							"    pm.expect(responseJson.caracteristica).to.eql(\"eTruck05\");\r",
+							"    pm.expect(responseJson.tara).to.eql(7500);\r",
+							"    pm.expect(responseJson.capacidade).to.eql(4301);\r",
+							"    pm.expect(responseJson.carga).to.eql(80);\r",
+							"    pm.expect(responseJson.autonomia).to.eql(100);\r",
+							"    pm.expect(responseJson.tempo).to.eql(60);});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"caracteristica\": \"eTruck05\",\r\n  \"tara\": 7500 ,\r\n  \"capacidade\" : 4301 ,\r\n  \"carga\" : 80 ,\r\n  \"autonomia\" : 100 ,\r\n  \"tempo\" : 60 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camioes/matriculas/AA-00-00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes",
+						"matriculas",
+						"AA-00-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar a Atualização do Camião com matricula = \"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"     const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.matricula).to.eql(\"AA-00-00\");\r",
+							"    pm.expect(responseJson.caracteristica).to.eql(\"eTruck05\");\r",
+							"    pm.expect(responseJson.tara).to.eql(7500);\r",
+							"    pm.expect(responseJson.capacidade).to.eql(4301);\r",
+							"    pm.expect(responseJson.carga).to.eql(80);\r",
+							"    pm.expect(responseJson.autonomia).to.eql(100);\r",
+							"    pm.expect(responseJson.tempo).to.eql(60);});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/camioes/matriculas/AA-00-00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes",
+						"matriculas",
+						"AA-00-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover o camião com Matricula = \"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/camioes/matriculas/AA-00-00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes",
+						"matriculas",
+						"AA-00-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Camião com Matricula=\"AA-00-00\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/camioes/matriculas/AA-00-00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camioes",
+						"matriculas",
+						"AA-00-00"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

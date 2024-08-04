@@ -1,0 +1,790 @@
+{
+	"info": {
+		"_postman_id": "e83e5799-706b-405f-88b8-74397c5b03fa",
+		"name": "API Percursos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24063495"
+	},
+	"item": [
+		{
+			"name": "Criar Armazém XX1 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\": \"XX1\",\r",
+							"    \"designacao\": \"Arouca\",\r",
+							"    \"rua\": \"Travessa\",\r",
+							"    \"codigoPostal\": \"5000-005\",\r",
+							"    \"latitude\": 40.9,\r",
+							"    \"longitude\": 8.2,\r",
+							"    \"altitude\": 250.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"Id\":\"XX1\",\r\n    \"Designacao\":\"Arouca\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"40.9\",\r\n    \"Longitude\": \"8.2\",\r\n    \"Altitude\": \"250.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém XX2 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\": \"XX2\",\r",
+							"    \"designacao\": \"Espinho\",\r",
+							"    \"rua\": \"Travessa\",\r",
+							"    \"codigoPostal\": \"5000-005\",\r",
+							"    \"latitude\": 41.0,\r",
+							"    \"longitude\": 5.0,\r",
+							"    \"altitude\": 35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX2\",\r\n    \"Designacao\":\"Espinho\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"41.0\",\r\n    \"Longitude\": \"5.0\",\r\n    \"Altitude\": \"35.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém XX3 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\": \"XX3\",\r",
+							"    \"designacao\": \"Gondomar\",\r",
+							"    \"rua\": \"Travessa\",\r",
+							"    \"codigoPostal\": \"5000-005\",\r",
+							"    \"latitude\": 42.1,\r",
+							"    \"longitude\": 8.8,\r",
+							"    \"altitude\": 200.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX3\",\r\n    \"Designacao\":\"Gondomar\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"42.1\",\r\n    \"Longitude\": \"8.8\",\r\n    \"Altitude\": \"200.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém XX4 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\": \"XX4\",\r",
+							"    \"designacao\": \"Maia\",\r",
+							"    \"rua\": \"Travessa\",\r",
+							"    \"codigoPostal\": \"5000-005\",\r",
+							"    \"latitude\": 41.2,\r",
+							"    \"longitude\": 8.6,\r",
+							"    \"altitude\": 700.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX4\",\r\n    \"Designacao\":\"Maia\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"41.2\",\r\n    \"Longitude\": \"8.6\",\r\n    \"Altitude\": \"700.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém X14 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\": \"X14\",\r",
+							"    \"designacao\": \"Vale de Cambra\",\r",
+							"    \"rua\": \"Rua do Caima\",\r",
+							"    \"codigoPostal\": \"3730-200\",\r",
+							"    \"latitude\": 40.8,\r",
+							"    \"longitude\": 8.4,\r",
+							"    \"altitude\": 50.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": \"X14\",\r\n    \"Designacao\": \"Vale de Cambra\",\r\n    \"Rua\": \"Rua do Caima\",\r\n    \"CodigoPostal\": \"3730-200\",\r\n    \"Latitude\": \"40.8\",\r\n    \"Longitude\": \"8.4\",\r\n    \"Altitude\": \"50.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém X16 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\": \"X16\",\r",
+							"    \"designacao\": \"Vila do Conde\",\r",
+							"    \"rua\": \"Travessa\",\r",
+							"    \"codigoPostal\": \"5000-005\",\r",
+							"    \"latitude\": 41.4,\r",
+							"    \"longitude\": 8.7,\r",
+							"    \"altitude\": 150.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"X16\",\r\n    \"Designacao\":\"Vila do Conde\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"41.4\",\r\n    \"Longitude\": \"8.7\",\r\n    \"Altitude\": \"150.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar percurso X14 - X16",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"armazemPartida\":\"X14\",\n    \"armazemChegada\":\"X16\",\n    \"distancia\":\"3\",\n    \"tempo\":\"4\",\n    \"energiaGasta\":\"5\",\n    \"tempoExtra\":\"4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get percursos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"armazemPartida\":\"X14\",\n    \"armazemChegada\":\"X16\",\n    \"distancia\":\"3\",\n    \"tempo\":\"4\",\n    \"energiaGasta\":\"5\",\n    \"tempoExtra\":\"4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get percurso pela partida",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"armazemPartida\":\"X14\",\n    \"armazemChegada\":\"X16\",\n    \"distancia\":\"3\",\n    \"tempo\":\"4\",\n    \"energiaGasta\":\"5\",\n    \"tempoExtra\":\"4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos/armazempartida/X14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos",
+						"armazempartida",
+						"X14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get percurso pelo armazem partida X14 e armazem chegada X16",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"armazemPartida\":\"X14\",\n    \"armazemChegada\":\"X16\",\n    \"distancia\":\"3\",\n    \"tempo\":\"4\",\n    \"energiaGasta\":\"5\",\n    \"tempoExtra\":\"4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos/armazens?armazempartida=X14&armazemchegada=X16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos",
+						"armazens"
+					],
+					"query": [
+						{
+							"key": "armazempartida",
+							"value": "X14"
+						},
+						{
+							"key": "armazemchegada",
+							"value": "X16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get primeiro percurso pelo armazem partida X14 e armazem chegada X16",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"armazemPartida\":\"X14\",\n    \"armazemChegada\":\"X16\",\n    \"distancia\":\"3\",\n    \"tempo\":\"4\",\n    \"energiaGasta\":\"5\",\n    \"tempoExtra\":\"4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos/primeiro?armazempartida=X14&armazemchegada=X16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos",
+						"primeiro"
+					],
+					"query": [
+						{
+							"key": "armazempartida",
+							"value": "X14"
+						},
+						{
+							"key": "armazemchegada",
+							"value": "X16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT editar percurso X14 - X16",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"armazemPartida\":\"X14\",\r\n    \"armazemChegada\":\"X16\",\r\n    \"distancia\":\"4\",\r\n    \"tempo\":\"4\",\r\n    \"energiaGasta\":\"5\",\r\n    \"tempoExtra\":\"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos/edit/armazempartida=X14&armazemchegada=X16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos",
+						"edit",
+						"armazempartida=X14&armazemchegada=X16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL percurso X14 - X16",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"armazemPartida\":\"X14\",\r\n    \"armazemChegada\":\"X16\",\r\n    \"distancia\":\"3\",\r\n    \"tempo\":\"4\",\r\n    \"energiaGasta\":\"5\",\r\n    \"tempoExtra\":\"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percursos/delete?armazempartida=X14&armazemchegada=X16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percursos",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "armazempartida",
+							"value": "X14"
+						},
+						{
+							"key": "armazemchegada",
+							"value": "X16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL armazem XX1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL armazem XX2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL armazem XX3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL armazem XX4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL armazem X14",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/X14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"X14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL armazem X16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/X16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"X16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

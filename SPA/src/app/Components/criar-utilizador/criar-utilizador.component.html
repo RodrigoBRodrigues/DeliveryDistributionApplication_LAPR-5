@@ -1,0 +1,48 @@
+<div class="center-page">
+    <title>Criar Utilizador</title>
+          <div class="container">
+
+          <div class="context"> <h1>CRIAR UTILIZADOR</h1> </div>
+
+          <br> <br> <br> <br>
+
+          <label for="uname"><b>Nome Completo</b></label>
+          <input type="text" required [minLength]="1" required [maxLength]="120"
+          [(ngModel)]="utilizador.nome" placeholder="Introduzir Nome Completo do Utilizador" name="nome" required>
+
+          <label for="uname"><b>Nome de Utilizador</b></label>
+          <input type="text" required [minLength]="3" required [maxLength]="20"
+          [(ngModel)]="utilizador.utilizador" placeholder="Introduzir Nome de Utilizador" name="utilizador" required>
+
+          <label for="uname"><b>Função</b></label>
+          <select [(ngModel)]="utilizador.role">
+            <option>Administrador</option>
+            <option>Armazem</option>
+            <option>Frota</option>
+            <option>Logistica</option>
+          </select>
+
+          <label for="uname"><b>Nº Telemóvel</b></label>
+          <input type="text" required [minLength]="9" required [maxLength]="9"
+          [(ngModel)]="utilizador.telemovel" placeholder="Introduzir Número de Telemóvel do Utilizador" name="telemovel" required>
+
+          <label for="uname"><b>E-mail</b></label>
+          <input type="text" required [minLength]="5"
+          [(ngModel)]="utilizador.email" placeholder="Introduzir E-mail do Utilizador" name="email" required>
+
+          
+          <section class="example-section">
+            <mat-checkbox class="example-margin">
+              <div class="flexbox-parent" (click)="check()">
+                <div layout="row" layout-align="center center" style="min-height: 30px">
+                 <div flex="15">Confirmo que o titular dos dados acima forneceu o consentimento dos seus dados pessoais exclusivamente para as seguintes finalidades:</div>
+                 <div flex="15">• Nome Completo - Requerido para identificação de utilizadores. • Nome de Utilizador - Corresponde ao nome dentro sistema pelo qual um utilizador é identificável.</div>
+                 <div flex="15">• Nº Telemóvel - Requerido para facilitar o contacto com cada utilizador, em caso de necessidade de coordenação operacional entre os diferentes utilizadores.</div>
+                 <div flex="15">• E-mail - Requerido apenas para a autenticação na aplicação.</div>
+                </div>
+              </div>
+              </mat-checkbox>
+          </section>
+
+          <button type="button" (click)="criarUtilizador()">Criar</button>
+</div>

@@ -1,0 +1,26 @@
+<div class="center-page">
+    <title>Cancelar Utilizador</title>
+          <div class="container">
+
+          <div class="context"> <h1>CANCELAR UTILIZADOR</h1> </div>
+
+          <br> <br> <br> <br>
+
+          <label for="uname"><b>Selecione o Utilizador a Cancelar</b></label>
+          <br>
+          <select [(ngModel)]="utilizador.utilizador">
+            <option *ngFor="let utilizador of utilizadoresData" [ngValue]="utilizador.utilizador">{{utilizador.utilizador}}</option>
+          </select>
+
+          <section class="example-section">
+            <mat-checkbox class="example-margin">
+              <div class="flexbox-parent" (click)="check()">
+                <div layout="row" layout-align="center center" style="min-height: 30px">
+                 <div flex="15">Confirmo que a conta selecionada é a desejada a cancelar/anonimizar </div>
+                </div>
+              </div>
+              </mat-checkbox>
+          </section>
+
+          <button type="button" (click)="cancelarUtilizador(utilizador)">cancelar</button>
+</div>

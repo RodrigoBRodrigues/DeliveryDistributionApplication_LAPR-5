@@ -1,0 +1,45 @@
+  <div class="center-page">
+
+    <div class="container">
+
+      <div class="context"> <h1>CRIAR ENTREGA</h1> </div>
+
+      <br> <br> <br> <br>
+
+      <label for="uname"><b>Data</b></label>
+      <br>
+      <input type="date" [(ngModel)]="entrega.data" placeholder="Introduzir data" name="data" required>
+
+      <br><br>
+
+      <label for="uname"><b>Massa</b></label>
+<!-- Mudar isto para usar o peso máximo do camião -->
+      <input type="number" required [min]="0" required [max]="100000"
+       [(ngModel)]="entrega.massa" placeholder="Introduzir massa" name=" massa" required>
+      <br><br>
+
+      <label for="uname"><b>Selecione o Armazém onde a entrega será entregue</b></label>
+      <br>
+      <select [(ngModel)]="entrega.armazemDesignacao">
+        <option *ngFor="let armazem of armazens" [ngValue]="armazem.id">{{armazem.id}}</option>
+      </select>
+
+      <br><br>
+
+      <label for="uname"><b>Tempo colocar</b></label>
+      <br>
+      <input type="number" required [min]="0" required [max]="1440"
+       [(ngModel)]="entrega.tempoColocar" placeholder="Introduzir tempo colocar" name="tempoColocar" required>
+
+      <br><br>
+
+      <label for="uname"><b>Tempo retirar</b></label>
+      <br>
+      <input type="number" required [min]="0" required [max]="1440"
+       [(ngModel)]="entrega.tempoRetirar" placeholder="Introduzir tempo retirar" name="tempoRetirar" required>
+
+      <button id="criar" type="button" (click)="addEntrega()">Criar</button>
+
+    </div>
+
+

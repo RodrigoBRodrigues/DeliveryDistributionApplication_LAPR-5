@@ -1,0 +1,52 @@
+<div class="center-page">
+
+    <div class="container">
+
+      <div class="context"> <h1>CRIAR PERCURSO</h1> </div>
+
+      <br> <br> <br> <br>
+
+      <!--ArmazemChegada e ArmazemPartida -->
+      <label for="uname"><b>Selecione o Armazém de Partida</b></label>
+      <br>
+      <select [(ngModel)]="percurso.armazemPartida">
+        <option *ngFor="let armazem of armazensData" [ngValue]="armazem.designacao">{{armazem.designacao}}</option>
+      </select>
+
+      <label for="uname"><b>Selecione o Armazém de Chegada</b></label>
+      <br>
+      <select [(ngModel)]="percurso.armazemChegada">
+        <option *ngFor="let armazem of armazensData" [ngValue]="armazem.designacao">{{armazem.designacao}}</option>
+      </select>
+
+      <!--Distancia -->
+      <label for="uname"><b>Distancia</b></label>
+      <br>
+      <input type="text" required [min]="0" required [max]="100000"
+       [(ngModel)]="percurso.distancia" placeholder="Introduzir distancia do percurso" name=" distancia" required>
+      <br><br>
+
+      <!--Tempo -->
+      <label for="uname"><b>Tempo</b></label>
+      <br>
+      <input type="text" required [min]="0" required [max]="1440"
+       [(ngModel)]="percurso.tempo" placeholder="Introduzir tempo do percurso" name=" tempo" required>
+      <br><br>
+
+      <!--EnergiaGasta -->
+      <label for="uname"><b>Energia Gasta</b></label>
+      <br>
+      <input type="text" required [min]="0" required [max]="100000"
+       [(ngModel)]="percurso.energiaGasta" placeholder="Introduzir Energia Gasta" name="energiaGasta" required>
+
+      <br><br>
+
+      <!--TempoExtra -->
+      <label for="uname"><b>Tempo Extra</b></label>
+      <br>
+      <input type="text" required [min]="0" required [max]="1440"
+       [(ngModel)]="percurso.tempoExtra" placeholder="Introduzir tempo extra" name="tempoExtra" required>
+
+      <button type="button" (click)="addPercurso()">Criar Percurso</button>
+
+    </div>

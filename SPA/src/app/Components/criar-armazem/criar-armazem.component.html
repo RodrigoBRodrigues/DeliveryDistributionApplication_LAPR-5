@@ -1,0 +1,41 @@
+<div class="center-page">
+  <title>Criar Armazém</title>
+        <div class="container">
+
+        <div class="context"> <h1>CRIAR ARMAZÉM</h1> </div>
+
+        <br> <br> <br> <br>
+
+        <label for="uname"><b>Identificador do Armazém</b></label>
+        <input type="text" required [minLength]="3" required [maxLength]="3"  
+        [(ngModel)]="armazem.id" placeholder="Introduzir Identificador do Armazém" name="Id" required>
+
+        <label for="uname"><b>Designação</b></label>
+        <input type="text" required [minLength]="1" required [maxLength]="50" 
+        [(ngModel)]="armazem.designacao" placeholder="Introduzir Designação" name="Designação" required>
+  
+        <label for="uname"><b>Rua</b></label>
+        <input type="text" required [minLength]="1" 
+        [(ngModel)]="armazem.rua" placeholder="Introduzir Rua" name="Rua" required>
+  
+        <label for="uname"><b>Código Postal</b></label>
+        <input type="text" required [minLength]="8" required [maxLength]="8" required pattern="\d{5}-\d{3}"
+        [(ngModel)]="armazem.codigoPostal" placeholder="Introduzir Código Postal" name="CódigoPostal" required>
+
+        <label for="uname"><b>Latitude</b></label>
+        <input type="number" required [min]="0" required [max]="90"
+        [(ngModel)]="armazem.latitude" placeholder="Introduzir Latitude" name="Latitude" required>
+
+        <label for="uname"><b>Longitude</b></label>
+        <input type="number" required [min]="0" required [max]="180"
+        [(ngModel)]="armazem.longitude" placeholder="Introduzir Longitude" name="Longitude" required>
+
+        <label for="uname"><b>Altitude</b></label>
+        <input type="number" required [min]="0" 
+        [(ngModel)]="armazem.altitude" placeholder="Introduzir Altitude" name="Altitude" required>
+  
+        <button type="button" (click)="addArmazem()">Criar</button>
+
+      </div>
+  
+  

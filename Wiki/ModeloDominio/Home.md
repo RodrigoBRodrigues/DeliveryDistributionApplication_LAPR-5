@@ -1,0 +1,1 @@
+![Image](./DDD_DOMAIN_MODEL.svg)

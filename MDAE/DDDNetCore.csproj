@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+<PropertyGroup>
+    <TargetFramework>netcoreapp6.0</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel> 
+    <GenerateProgramFile>false</GenerateProgramFile>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth" Version="1.57.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
+
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <Compile Remove="Infraestructure\Families\FamilyEntityTypeConfiguration.cs" />
+    <Compile Remove="Domain\Categories\Category.cs" />
+    <Compile Remove="Domain\Families\FamilyService.cs" />
+    <Compile Remove="Domain\Categories\ICategoryRepository.cs" />
+    <Compile Remove="Domain\Categories\CategoryId.cs" />
+    <Compile Remove="Domain\Families\FamilyDto.cs" />
+    <Compile Remove="Domain\Products\ProductDto.cs" />
+    <Compile Remove="Controllers\FamiliesController.cs" />
+    <Compile Remove="Domain\Families\FamilyId.cs" />
+    <Compile Remove="Controllers\ProductsController.cs" />
+    <Compile Remove="Domain\Categories\CategoryDto.cs" />
+    <Compile Remove="Domain\Products\IProductRepository.cs" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <Folder Include="Domain\Categories" />
+    <Folder Include="Domain\Families" />
+    <Folder Include="Infraestructure\Categories" />
+    <Folder Include="Infraestructure\Products" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <Compile Remove="Infraestructure\SqlDesignTimeFactory.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+   <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="Moq" Version="4.15.2" />
+</ItemGroup>
+
+</Project>

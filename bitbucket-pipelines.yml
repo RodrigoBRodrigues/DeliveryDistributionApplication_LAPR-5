@@ -1,0 +1,51 @@
+pipelines:
+  default:
+    - step:
+        name: Build and Test SPA
+        image: node:latest
+        caches:
+          - node
+        script:
+          - cd SPA
+          - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
+          - apt-get update
+          - apt-get install -y google-chrome-stable xvfb
+          - npm install
+          - npm install -g netlify-cli --unsafe-perm=true
+          - CI=false npm run build
+          - ./node_modules/.bin/ng test --no-watch --no-progress --browsers ChromeHeadlessCI
+          - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
+    - step:
+        name: Build and Test the NodeJS application
+        image: node:latest
+        caches:
+          - node
+        script:
+          - cd MDLO
+          - npm install
+          - CI=false npm run build
+
+    - step:
+        name: Deploy to production
+        deployment: production
+        script:
+          - echo "Deploying to production environment"
+          - pipe: atlassian/ssh-run:0.2.2
+            variables:
+              PORT: "10367"
+              SSH_USER: "root"
+              SERVER: "vsgate-ssh.dei.isep.ipp.pt"
+              COMMAND: "lei22_23_s5_3dh_046/deploy.sh"
+
+    - step:
+        name: Build and Test .NET Application
+        image: mcr.microsoft.com/dotnet/sdk:6.0
+        caches:
+          - dotnetcore
+        script:
+          - cd MDAE
+          - REPORTS_PATH=./test-reports/build_${BITBUCKET_BUILD_NUMBER}
+          - dotnet restore
+          - dotnet build --no-restore --configuration Release
+          - dotnet test --no-build --configuration Release --test-adapter-path:.

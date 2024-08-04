@@ -1,0 +1,56 @@
+
+<div class="center-page">
+
+    <div class="container">
+
+      <div class="context"> <h1>CRIAR CAMIÃO</h1> </div>
+
+      <br> <br> <br> <br>
+
+      <label for="uname"><b>Matricula</b></label>
+      <input type="text" required [minLength]="6" required [maxLength]="8"
+      [(ngModel)]="camiao.matricula" placeholder="Introduzir matricula" name="matricula" required>
+
+
+      <label for="uname"><b>Caracteristica</b></label>
+      <input type="text" required [minLength]="1" required [maxLength]="50"
+      [(ngModel)]="camiao.caracteristica" placeholder="Introduzir caracteristica" name="caracteristica" required>
+
+
+      <label for="uname"><b>Tara</b></label>
+
+      <input type="number"   required [min]="1"
+      [(ngModel)]="camiao.tara" placeholder="Introduzir tara" name="tara" required>
+
+
+
+      <label for="uname"><b>Capacidade</b></label>
+
+      <input type="number" required [min]="1"
+       [(ngModel)]="camiao.capacidade" placeholder="Introduzir capacidade" name="capacidade" required>
+
+
+
+      <label for="uname"><b>Carga</b></label>
+
+      <input type="number" required [min]="1"
+       [(ngModel)]="camiao.carga" placeholder="Introduzir carga" name="carga" required>
+
+
+
+      <label for="uname"><b>Autonomia</b></label>
+
+      <input type="number"  required [min]="1"
+      [(ngModel)]="camiao.autonomia" placeholder="Introduzir autonomia" name="autonomia" required>
+
+
+      <label for="uname"><b>Tempo</b></label>
+
+      <input type="number" required [min]="1"
+      [(ngModel)]="camiao.tempo" placeholder="Introduzir tempo" name="tempo" required>
+
+      <button type="button" (click)="addCamiao()">Criar</button>
+
+    </div>
+
+

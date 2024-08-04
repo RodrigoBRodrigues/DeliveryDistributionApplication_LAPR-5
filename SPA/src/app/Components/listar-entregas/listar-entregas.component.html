@@ -1,0 +1,38 @@
+<div class="context"><br><h1>ENTREGAS</h1></div>
+
+  <br>
+ <div class=filterTitle>FILTRO</div>
+    <input type="filter1" [(ngModel)]="entregaFilter1"  matInput placeholder="Procure Entrega por Armazem" #input >
+    <input type="date" [(ngModel)]="entregaFilter2"  matInput placeholder="Procure Entregas com data de inicial" #input >
+    <input type="date" [(ngModel)]="entregaFilter3"  matInput placeholder="Procure Entregas com data de final" #input >
+  <br>
+  <table mat-table id="lista-entregas" [dataSource]="entregasData|searchArmazemChegada:entregaFilter1|searchEntreDatas:entregaFilter2:entregaFilter3" >
+
+      <ng-container matColumnDef="data">
+          <th mat-header-cell *matHeaderCellDef> <b>Data</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="massa">
+          <th mat-header-cell *matHeaderCellDef> <b>Massa</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.massa}} </td>
+        </ng-container>
+
+       <ng-container matColumnDef="armazemDesignacao">
+          <th mat-header-cell *matHeaderCellDef> <b>Armazem</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.armazemDesignacao}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tempoColocar">
+          <th mat-header-cell *matHeaderCellDef> <b>Tempo Colocar</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.tempoColocar}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tempoRetirar">
+          <th mat-header-cell *matHeaderCellDef> <b>Tempo Retirar</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.tempoRetirar}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" ngClass="top-table"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

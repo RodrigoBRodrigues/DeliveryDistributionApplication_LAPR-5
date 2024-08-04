@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "1638c870-6a5d-4065-acfb-5b5fa70d122a",
+		"name": "API Armazens",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24063495"
+	},
+	"item": [
+		{
+			"name": "Verificar se existe Armazém com o Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém com Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX9\",\r",
+							"    \"designacao\":\"Caldas\",\r",
+							"    \"rua\":\"Travessa\",\r",
+							"    \"codigoPostal\":\"5000-005\",\r",
+							"    \"latitude\":40.5,\r",
+							"    \"longitude\":5.0,\r",
+							"    \"altitude\":35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX9\",\r\n    \"Designacao\":\"Caldas\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"40.5\",\r\n    \"Longitude\": \"5.0\",\r\n    \"Altitude\": \"35.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Armazém com Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX9\",\r",
+							"    \"designacao\":\"Caldas\",\r",
+							"    \"rua\":\"Travessa\",\r",
+							"    \"codigoPostal\":\"5000-005\",\r",
+							"    \"latitude\":40.5,\r",
+							"    \"longitude\":5.0,\r",
+							"    \"altitude\":35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Armazém com Designação = Caldas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX9\",\r",
+							"    \"designacao\":\"Caldas\",\r",
+							"    \"rua\":\"Travessa\",\r",
+							"    \"codigoPostal\":\"5000-005\",\r",
+							"    \"latitude\":40.5,\r",
+							"    \"longitude\":5.0,\r",
+							"    \"altitude\":35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/designacao/Caldas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"designacao",
+						"Caldas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar a Designação do Armazém",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX9\",\r",
+							"    \"designacao\":\"Caldas da Rainha\",\r",
+							"    \"rua\":\"Travessa\",\r",
+							"    \"codigoPostal\":\"5000-005\",\r",
+							"    \"latitude\":40.5,\r",
+							"    \"longitude\":5.0,\r",
+							"    \"altitude\":35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX9\",\r\n    \"Designacao\":\"Caldas da Rainha\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"40.5\",\r\n    \"Longitude\": \"5.0\",\r\n    \"Altitude\": \"35.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar a Atualização do Armazém",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX9\",\r",
+							"    \"designacao\":\"Caldas da Rainha\",\r",
+							"    \"rua\":\"Travessa\",\r",
+							"    \"codigoPostal\":\"5000-005\",\r",
+							"    \"latitude\":40.5,\r",
+							"    \"longitude\":5.0,\r",
+							"    \"altitude\":35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/designacao/Caldas%20da%20Rainha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"designacao",
+						"Caldas%20da%20Rainha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Armazem com Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Armazém com Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Armazém com Designação = Caldas da Rainha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/armazens/designacao/Caldas%20da%20Rainha",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"armazens",
+						"designacao",
+						"Caldas%20da%20Rainha"
+					],
+					"query": [
+						{
+							"key": "caldas",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

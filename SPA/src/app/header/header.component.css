@@ -1,0 +1,9 @@
+.header-class {
+  background: rgb(163,63,31);
+  background: linear-gradient(90deg, rgba(163,63,31,1) 12%, rgba(219,103,65,1) 100%);
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}

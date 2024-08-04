@@ -1,0 +1,45 @@
+<div class="context">
+  <br />
+  <h1>Viagens</h1>
+</div>
+
+<br />
+<div class="filterTitle">FILTRO</div>
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
+</mat-form-field>
+<br />
+<table mat-table id="lista-entregas" [dataSource]="datasource" matSort>
+  <ng-container matColumnDef="dia">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef><b>Dia</b></th>
+    <td mat-cell *matCellDef="let element">{{ element.dia }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="camiao">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef><b>Camiao</b></th>
+    <td mat-cell *matCellDef="let element">{{ element.camiao }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="curso">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef><b>Curso</b></th>
+    <td mat-cell *matCellDef="let element">{{ element.curso }}</td>
+  </ng-container>
+
+  <tr
+    mat-header-row
+    *matHeaderRowDef="displayedColumns"
+    ngClass="top-table"
+  ></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<mat-paginator
+  id="paginator"
+  [length]="100"
+  [pageSize]="1"
+  [pageSizeOptions]="[1, 2, 5, 10, 25, 100]"
+  aria-label="Select page"
+>
+</mat-paginator>

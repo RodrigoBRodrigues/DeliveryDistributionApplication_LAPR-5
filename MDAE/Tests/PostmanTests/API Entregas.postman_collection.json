@@ -1,0 +1,1132 @@
+{
+	"info": {
+		"_postman_id": "040ec3dd-9e17-4d3d-9f65-0f8cc4f477a2",
+		"name": "API Entregas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24063495"
+	},
+	"item": [
+		{
+			"name": "Verificar se existe Entrega com o Id = 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém XX9 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX9\",\r",
+							"    \"designacao\":\"Caldas\",\r",
+							"    \"rua\":\"Travessa\",\r",
+							"    \"codigoPostal\":\"5000-005\",\r",
+							"    \"latitude\":40.5,\r",
+							"    \"longitude\":5.0,\r",
+							"    \"altitude\":35.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX9\",\r\n    \"Designacao\":\"Caldas\",\r\n    \"Rua\":\"Travessa\",\r\n    \"CodigoPostal\":\"5000-005\",\r\n    \"Latitude\": \"40.5\",\r\n    \"Longitude\": \"5.0\",\r\n    \"Altitude\": \"35.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Armazém XX4 dependência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"XX4\",\r",
+							"    \"designacao\":\"Vale de Cambra\",\r",
+							"    \"rua\":\"Rua do Caima\",\r",
+							"    \"codigoPostal\":\"3730-200\",\r",
+							"    \"latitude\":30.5,\r",
+							"    \"longitude\":1.0,\r",
+							"    \"altitude\":350.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"Id\":\"XX4\",\r\n    \"Designacao\":\"Vale de Cambra\",\r\n    \"Rua\":\"Rua do Caima\",\r\n    \"CodigoPostal\":\"3730-200\",\r\n    \"Latitude\": \"30.5\",\r\n    \"Longitude\": \"1.0\",\r\n    \"Altitude\": \"350.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Entrega com Id = 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Post feito com sucesso\", function () {",
+							"    pm.response.to.have.body({",
+							"    \"id\":\"0\",",
+							"    \"data\":\"2022-10-23T00:00:00\",",
+							"    \"massa\":10000.0,",
+							"    \"armazemDesignacao\":\"XX9\",",
+							"    \"tempoColocar\":10.0,",
+							"    \"tempoRetirar\":20.0",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"data\": \"2022-10-23T00:00:00\",\n                \"massa\": 10000,\n                \"armazemDesignacao\": \"XX9\",\n                \"tempoColocar\": 10.0,\n                \"tempoRetirar\": 20.0\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Entrega com o Id = 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"0\",\r",
+							"    \"data\":\"2022-10-23T00:00:00\",\r",
+							"    \"massa\":10000.0,\r",
+							"    \"armazemDesignacao\":\"XX9\",\r",
+							"    \"tempoColocar\":10.0,\r",
+							"    \"tempoRetirar\":20.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar a Data da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Put feito com sucesso\", function () {",
+							"    pm.response.to.have.body({",
+							"    \"id\":\"0\",",
+							"    \"data\":\"2022-11-07T00:00:00\",",
+							"    \"massa\":10000.0,",
+							"    \"armazemDesignacao\":\"XX9\",",
+							"    \"tempoColocar\":10.0,",
+							"    \"tempoRetirar\":20.0",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"data\": \"2022-11-07T00:00:00\",\n                \"massa\": 10000,\n                \"armazemDesignacao\": \"XX9\",\n                \"tempoColocar\": 10.0,\n                \"tempoRetirar\": 20.0\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar a Atualização da Data da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"0\",\r",
+							"    \"data\":\"2022-11-07T00:00:00\",\r",
+							"    \"massa\":10000.0,\r",
+							"    \"armazemDesignacao\":\"XX9\",\r",
+							"    \"tempoColocar\":10.0,\r",
+							"    \"tempoRetirar\":20.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar a Massa da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Put feito com sucesso\", function () {",
+							"    pm.response.to.have.body({",
+							"    \"id\":\"0\",",
+							"    \"data\":\"2022-11-07T00:00:00\",",
+							"    \"massa\":8000.0,",
+							"    \"armazemDesignacao\":\"XX9\",",
+							"    \"tempoColocar\":10.0,",
+							"    \"tempoRetirar\":20.0",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"data\": \"2022-11-07T00:00:00\",\n                \"massa\": 8000,\n                \"armazemDesignacao\": \"XX9\",\n                \"tempoColocar\": 10.0,\n                \"tempoRetirar\": 20.0\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar a Atualização da Massa da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"0\",\r",
+							"    \"data\":\"2022-11-07T00:00:00\",\r",
+							"    \"massa\":8000.0,\r",
+							"    \"armazemDesignacao\":\"XX9\",\r",
+							"    \"tempoColocar\":10.0,\r",
+							"    \"tempoRetirar\":20.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar o armazem associado à  Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Put feito com sucesso\", function () {",
+							"    pm.response.to.have.body({",
+							"    \"id\":\"0\",",
+							"    \"data\":\"2022-11-07T00:00:00\",",
+							"    \"massa\":8000.0,",
+							"    \"armazemDesignacao\":\"XX4\",",
+							"    \"tempoColocar\":10.0,",
+							"    \"tempoRetirar\":20.0",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"data\": \"2022-11-07T00:00:00\",\n                \"massa\": 8000,\n                \"armazemDesignacao\": \"XX4\",\n                \"tempoColocar\": 10.0,\n                \"tempoRetirar\": 20.0\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar a Atualização do Armazém à Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Put feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"0\",\r",
+							"    \"data\":\"2022-11-07T00:00:00\",\r",
+							"    \"massa\":8000.0,\r",
+							"    \"armazemDesignacao\":\"XX4\",\r",
+							"    \"tempoColocar\":10.0,\r",
+							"    \"tempoRetirar\":20.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar o tempo colocar da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Put feito com sucesso\", function () {",
+							"    pm.response.to.have.body({",
+							"    \"id\":\"0\",",
+							"    \"data\":\"2022-11-07T00:00:00\",",
+							"    \"massa\":8000.0,",
+							"    \"armazemDesignacao\":\"XX4\",",
+							"    \"tempoColocar\":5.0,",
+							"    \"tempoRetirar\":20.0",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"0\",\n    \"data\":\"2022-11-07T00:00:00\",\n    \"massa\":8000.0,\n    \"armazemDesignacao\":\"XX4\",\n    \"tempoColocar\":5.0,\n    \"tempoRetirar\":20.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar a Atualização do tempo colocar da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Put feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"0\",\r",
+							"    \"data\":\"2022-11-07T00:00:00\",\r",
+							"    \"massa\":8000.0,\r",
+							"    \"armazemDesignacao\":\"XX4\",\r",
+							"    \"tempoColocar\":5.0,\r",
+							"    \"tempoRetirar\":20.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar o tempo retirar da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Put feito com sucesso\", function () {",
+							"    pm.response.to.have.body({",
+							"    \"id\":\"0\",",
+							"    \"data\":\"2022-11-07T00:00:00\",",
+							"    \"massa\":8000.0,",
+							"    \"armazemDesignacao\":\"XX4\",",
+							"    \"tempoColocar\":5.0,",
+							"    \"tempoRetirar\":10.0",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"0\",\n    \"data\":\"2022-11-07T00:00:00\",\n    \"massa\":8000.0,\n    \"armazemDesignacao\":\"XX4\",\n    \"tempoColocar\":5.0,\n    \"tempoRetirar\":10.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar o tempo retirar da Entrega",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Put feito com sucesso\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"id\":\"0\",\r",
+							"    \"data\":\"2022-11-07T00:00:00\",\r",
+							"    \"massa\":8000.0,\r",
+							"    \"armazemDesignacao\":\"XX4\",\r",
+							"    \"tempoColocar\":5.0,\r",
+							"    \"tempoRetirar\":10.0\r",
+							"})});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Entrega entre as datas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/entregas/dates/?startdate=2022-10-20T00:00:00&finishdate=2022-11-08T00:00:00",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"entregas",
+						"dates",
+						""
+					],
+					"query": [
+						{
+							"key": "startdate",
+							"value": "2022-10-20T00:00:00"
+						},
+						{
+							"key": "finishdate",
+							"value": "2022-11-08T00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Entrega do Armazém XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/entregas/armazem/?armazem=XX9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"entregas",
+						"armazem",
+						""
+					],
+					"query": [
+						{
+							"key": "armazem",
+							"value": "XX9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Entrega com Id = 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Armazem com Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Armazem com Id = XX4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Armazém com Id = XX9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Armazém com Id = XX4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/armazens/XX4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"armazens",
+						"XX4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe Entrega com o Id = 0, depois de todas as alterações",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Entregas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Entregas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

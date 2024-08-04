@@ -1,0 +1,57 @@
+<div class="context"><br><h1>PERCURSOS</h1>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Armazem de partida</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Armazem partida" #input>
+
+</mat-form-field>
+<mat-form-field appearance="standard">
+  <mat-label>Armazem de chegada</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Armazem chegada" #input>
+
+</mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource">
+
+       <ng-container matColumnDef="armazemPartida">
+          <th mat-header-cell *matHeaderCellDef> <b>Armazem Partida</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.armazemPartida}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="armazemChegada">
+          <th mat-header-cell *matHeaderCellDef> <b>Armazem Chegada</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.armazemChegada}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="distancia">
+          <th mat-header-cell *matHeaderCellDef> <b>Distancia</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.distancia}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tempo">
+          <th mat-header-cell *matHeaderCellDef> <b>Tempo</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.tempo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="energiaGasta">
+          <th mat-header-cell *matHeaderCellDef> <b>Energia Gasta</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.energiaGasta}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tempoExtra">
+          <th mat-header-cell *matHeaderCellDef> <b>Tempo Extra</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.tempoExtra}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" ngClass="top-table"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator 
+                [length] = "100"
+                [pageSize] = "5"
+                [pageSizeOptions]="[5, 10, 15, 20, 25, 30]"
+                showFirstLastButtons
+                aria-label="Select page">
+</mat-paginator>
+</div>
